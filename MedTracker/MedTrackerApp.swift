@@ -11,7 +11,7 @@ import SwiftUI
 struct MedTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DailyScheduleView()
         }
     }
 }
