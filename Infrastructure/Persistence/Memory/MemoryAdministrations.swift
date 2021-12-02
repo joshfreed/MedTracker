@@ -1,10 +1,16 @@
 import Foundation
 import MedicationApp
 
+var administrations: [Administration] = []
+
 class MemoryAdministrations: AdministrationRepository {
-    private var administrations: [Administration] = []
+    func add(_ administration: Administration) async throws {
+        administrations.append(administration)
+    }
+
+    func save() async throws {}
 
     func hasAdministration(on date: Date, for medicationId: MedicationId) async throws -> Bool {
-        false
+        administrations.contains { $0.medicationId == medicationId }
     }
 }

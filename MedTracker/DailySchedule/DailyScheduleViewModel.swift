@@ -8,6 +8,7 @@ class DailyScheduleViewModel: ObservableObject {
     @Published var medications: [DailySchedule.Medication] = []
 
     @Injected private var getTrackedMedications: GetTrackedMedicationsUseCase
+    @Injected private var recordAdministration: RecordAdministrationUseCase
 
     init() {}
 
@@ -29,7 +30,15 @@ class DailyScheduleViewModel: ObservableObject {
     }
 
     func updateAdministration(medicationId: String, wasAdministered: Bool) {
-        print("updateAdministration \(medicationId), \(wasAdministered)")
+        Task {
+            if wasAdministered {
+                do {
+                    try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
+                } catch {
+                    fatalError("\(error)")
+                }
+            }
+        }
     }
 }
 
