@@ -8,44 +8,34 @@
 import SwiftUI
 
 struct MedicationList: View {
-    let medications: [Medication]
+    @Binding var medications: [DailySchedule.Medication]
 
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(medications) { med in
-                    MedicationCard(medication: med.name, schedule: med.frequency, administrations: med.administrations)
-                }
-
-                Spacer()
+        VStack {
+            ForEach($medications) { $med in
+                DailyMedicationView(medication: med.name, wasAdministered: $med.wasAdministered)
+                    .card()
             }
-            .padding(.top, 16)
-            .padding([.leading, .trailing], 8)
         }
-        .background(Color("Schedule Background").ignoresSafeArea())
+        .padding([.leading, .trailing], 16)
     }
 }
 
 struct MedicationList_Previews: PreviewProvider {
-    static var medications: [Medication] = [
+    static var medications: [DailySchedule.Medication] = [
         .init(
+            id: "A",
             name: "Lexapro",
-            frequency: "BID",
-            administrations: [
-                .init(time: "9am Dose", wasAdministered: true),
-                .init(time: "5pm Dose", wasAdministered: false)
-            ]
+            wasAdministered: false
         ),
         .init(
+            id: "B",
             name: "Allegra",
-            frequency: "Daily",
-            administrations: [
-                .init(time: "9am Dose", wasAdministered: true),
-            ]
+            wasAdministered: false
         ),
     ]
 
     static var previews: some View {
-        MedicationList(medications: medications)
+        MedicationList(medications: .constant(medications))
     }
 }

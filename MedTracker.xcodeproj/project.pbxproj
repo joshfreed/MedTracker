@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
+		5329EE942757E4CA00AB058F /* JFLib.Mediator in Frameworks */ = {isa = PBXBuildFile; productRef = 5329EE932757E4CA00AB058F /* JFLib.Mediator */; };
+		5329EE9B2757EE1F00AB058F /* DailyScheduleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */; };
+		532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E765C275840660092AB85 /* MemoryAdministrations.swift */; };
+		532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E765F275915100092AB85 /* MedicationPromptView.swift */; };
+		532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7661275915A40092AB85 /* AdministrationRecordedView.swift */; };
+		532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7663275920190092AB85 /* DailyMedicationView.swift */; };
+		532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7667275921CC0092AB85 /* CardViewModifier.swift */; };
+		53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A7FC2756CEF80090B266 /* MedTrackerBiz */; };
+		53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D3A8022756DA910090B266 /* MemoryMedications.swift */; };
+		53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A8052756DBC50090B266 /* JFLib.Services */; };
 		53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9123C27527BCE00710D4C /* MedTrackerApp.swift */; };
 		53E9124127527BD000710D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124027527BD000710D4C /* Assets.xcassets */; };
 		53E9124427527BD000710D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124327527BD000710D4C /* Preview Assets.xcassets */; };
-		53E9124E27527BD000710D4C /* MedTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9124D27527BD000710D4C /* MedTrackerTests.swift */; };
 		53E9125827527BD000710D4C /* MedTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9125727527BD000710D4C /* MedTrackerUITests.swift */; };
 		53E9125A27527BD000710D4C /* MedTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9125927527BD000710D4C /* MedTrackerUITestsLaunchTests.swift */; };
 		53E9126827543A9000710D4C /* MedicationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126727543A9000710D4C /* MedicationCard.swift */; };
@@ -40,12 +49,19 @@
 /* Begin PBXFileReference section */
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
+		5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModelTests.swift; sourceTree = "<group>"; };
+		532E765C275840660092AB85 /* MemoryAdministrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryAdministrations.swift; sourceTree = "<group>"; };
+		532E765F275915100092AB85 /* MedicationPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPromptView.swift; sourceTree = "<group>"; };
+		532E7661275915A40092AB85 /* AdministrationRecordedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationRecordedView.swift; sourceTree = "<group>"; };
+		532E7663275920190092AB85 /* DailyMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMedicationView.swift; sourceTree = "<group>"; };
+		532E7667275921CC0092AB85 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
+		53D3A7FA2756CE4F0090B266 /* MedTrackerBiz */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MedTrackerBiz; path = ../MedTrackerBiz; sourceTree = "<group>"; };
+		53D3A8022756DA910090B266 /* MemoryMedications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryMedications.swift; sourceTree = "<group>"; };
 		53E9123927527BCE00710D4C /* MedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E9123C27527BCE00710D4C /* MedTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerApp.swift; sourceTree = "<group>"; };
 		53E9124027527BD000710D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E9124327527BD000710D4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53E9124927527BD000710D4C /* MedTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53E9124D27527BD000710D4C /* MedTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerTests.swift; sourceTree = "<group>"; };
 		53E9125327527BD000710D4C /* MedTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E9125727527BD000710D4C /* MedTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerUITests.swift; sourceTree = "<group>"; };
 		53E9125927527BD000710D4C /* MedTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -59,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */,
+				5329EE942757E4CA00AB058F /* JFLib.Mediator in Frameworks */,
+				53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +101,7 @@
 		53262B5227568407001C6FE9 /* DailySchedule */ = {
 			isa = PBXGroup;
 			children = (
+				532E765E2759142C0092AB85 /* MedicationStates */,
 				53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */,
 				53E9126B27543E7900710D4C /* DailyScheduleView.swift */,
 				53262B5327568443001C6FE9 /* MedicationList.swift */,
@@ -91,13 +111,98 @@
 			path = DailySchedule;
 			sourceTree = "<group>";
 		};
+		5329EE992757EE0E00AB058F /* DailySchedule */ = {
+			isa = PBXGroup;
+			children = (
+				5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */,
+			);
+			path = DailySchedule;
+			sourceTree = "<group>";
+		};
+		532E765E2759142C0092AB85 /* MedicationStates */ = {
+			isa = PBXGroup;
+			children = (
+				532E765F275915100092AB85 /* MedicationPromptView.swift */,
+				532E7661275915A40092AB85 /* AdministrationRecordedView.swift */,
+				532E7663275920190092AB85 /* DailyMedicationView.swift */,
+			);
+			path = MedicationStates;
+			sourceTree = "<group>";
+		};
+		532E7665275921B10092AB85 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				532E7666275921BA0092AB85 /* Card */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		532E7666275921BA0092AB85 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				532E7667275921CC0092AB85 /* CardViewModifier.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		53D3A7F92756CE4F0090B266 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				53D3A7FA2756CE4F0090B266 /* MedTrackerBiz */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		53D3A7FB2756CEF80090B266 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53D3A7FE2756DA450090B266 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				53D3A7FF2756DA720090B266 /* Persistence */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		53D3A7FF2756DA720090B266 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				53D3A8012756DA800090B266 /* CoreData */,
+				53D3A8002756DA7A0090B266 /* Memory */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		53D3A8002756DA7A0090B266 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				53D3A8022756DA910090B266 /* MemoryMedications.swift */,
+				532E765C275840660092AB85 /* MemoryAdministrations.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		53D3A8012756DA800090B266 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		53E9123027527BCE00710D4C = {
 			isa = PBXGroup;
 			children = (
 				53E9123B27527BCE00710D4C /* MedTracker */,
 				53E9124C27527BD000710D4C /* MedTrackerTests */,
 				53E9125627527BD000710D4C /* MedTrackerUITests */,
+				53D3A7FE2756DA450090B266 /* Infrastructure */,
+				53D3A7F92756CE4F0090B266 /* Packages */,
 				53E9123A27527BCE00710D4C /* Products */,
+				53D3A7FB2756CEF80090B266 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +219,7 @@
 		53E9123B27527BCE00710D4C /* MedTracker */ = {
 			isa = PBXGroup;
 			children = (
+				532E7665275921B10092AB85 /* Shared */,
 				53262B5227568407001C6FE9 /* DailySchedule */,
 				53E9123C27527BCE00710D4C /* MedTrackerApp.swift */,
 				53E9124027527BD000710D4C /* Assets.xcassets */,
@@ -133,7 +239,7 @@
 		53E9124C27527BD000710D4C /* MedTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				53E9124D27527BD000710D4C /* MedTrackerTests.swift */,
+				5329EE992757EE0E00AB058F /* DailySchedule */,
 			);
 			path = MedTrackerTests;
 			sourceTree = "<group>";
@@ -163,6 +269,11 @@
 			dependencies = (
 			);
 			name = MedTracker;
+			packageProductDependencies = (
+				53D3A7FC2756CEF80090B266 /* MedTrackerBiz */,
+				53D3A8052756DBC50090B266 /* JFLib.Services */,
+				5329EE932757E4CA00AB058F /* JFLib.Mediator */,
+			);
 			productName = MedTracker;
 			productReference = 53E9123927527BCE00710D4C /* MedTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +346,9 @@
 				Base,
 			);
 			mainGroup = 53E9123027527BCE00710D4C;
+			packageReferences = (
+				53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */,
+			);
 			productRefGroup = 53E9123A27527BCE00710D4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,11 +391,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */,
+				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
+				532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
+				532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */,
 				53E9126827543A9000710D4C /* MedicationCard.swift in Sources */,
 				53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */,
 				53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */,
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
+				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
+				53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */,
 				53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53E9124E27527BD000710D4C /* MedTrackerTests.swift in Sources */,
+				5329EE9B2757EE1F00AB058F /* DailyScheduleViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +624,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MKZS4JTX63;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +649,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MKZS4JTX63;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +751,34 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joshfreed/JFLib";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5329EE932757E4CA00AB058F /* JFLib.Mediator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */;
+			productName = JFLib.Mediator;
+		};
+		53D3A7FC2756CEF80090B266 /* MedTrackerBiz */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MedTrackerBiz;
+		};
+		53D3A8052756DBC50090B266 /* JFLib.Services */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */;
+			productName = JFLib.Services;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53E9123127527BCE00710D4C /* Project object */;
 }

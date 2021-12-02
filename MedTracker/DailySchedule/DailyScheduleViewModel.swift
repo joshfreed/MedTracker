@@ -1,80 +1,89 @@
-//
-//  DailyScheduleViewModel.swift
-//  MedTracker
-//
-//  Created by Josh Freed on 11/30/21.
-//
-
 import Foundation
+import JFLib_Services
+import JFLib_Mediator
+import MedicationApp
 
 class DailyScheduleViewModel: ObservableObject {
     @Published private(set) var date: String = ""
-    @Published private(set) var medications: [Medication] = []
+    @Published var medications: [DailySchedule.Medication] = []
 
-    func load() {
-        date = "Nov 30th, 2021"
+    @Injected private var getTrackedMedications: GetTrackedMedicationsUseCase
 
-        medications = [
-            .init(
-                name: "Lexapro",
-                frequency: "BID",
-                administrations: [
-                    .init(time: "9am Dose", wasAdministered: true),
-                    .init(time: "5pm Dose", wasAdministered: false)
-                ]
-            ),
-            .init(
-                name: "Allegra",
-                frequency: "Daily",
-                administrations: [
-                    .init(time: "9am Dose", wasAdministered: true),
-                ]
-            ),
-        ]
+    init() {}
+
+    init(getDailySchedule: GetTrackedMedicationsUseCase) {
+        self.getTrackedMedications = getDailySchedule
+    }
+
+    deinit {
+        print("deinit")
+    }
+
+    func load() async {
+        do {
+            let response = try await getTrackedMedications.handle(GetTrackedMedicationsQuery(date: Date()))
+            present(response)
+        } catch {
+            fatalError("\(error)")
+        }
+    }
+
+    func updateAdministration(medicationId: String, wasAdministered: Bool) {
+        print("updateAdministration \(medicationId), \(wasAdministered)")
     }
 }
 
 // MARK: - Model
 
-struct Medication: Identifiable {
-    var id: String { name }
-    let name: String
-    let frequency: String
-    let administrations: [Administration]
+class DailySchedule {}
+
+extension DailySchedule {
+
+    struct Medication: Identifiable {
+        let id: String
+        let name: String
+
+        var wasAdministered: Bool {
+            didSet {
+                wasAdministeredDidSet(id, wasAdministered)
+            }
+        }
+
+        var wasAdministeredDidSet: (String, Bool) -> Void = { _, _ in }
+    }
+
 }
 
-struct Administration: Identifiable {
-    var id: String { time }
-    let time: String
-    let wasAdministered: Bool
+// MARK: - Presentation
+
+extension DailyScheduleViewModel {
+    func present(_ response: GetTrackedMedicationsResponse) {
+        date = "Nov 30th, 2021"
+        
+        medications = response.medications.map {
+            .init(id: $0.id, name: $0.name, wasAdministered: $0.wasAdministered)
+        }
+
+        for i in 0..<medications.count {
+            medications[i].wasAdministeredDidSet = updateAdministration
+        }
+    }
 }
 
-// MARK: - Fakes
+// MARK: - Fakes / Previews
 
 extension DailyScheduleViewModel {
     static func fake() -> DailyScheduleViewModel {
-        let vm = DailyScheduleViewModel()
-
-        vm.date = "Nov 30th, 2021"
-
-        vm.medications = [
-            .init(
-                name: "Lexapro",
-                frequency: "BID",
-                administrations: [
-                    .init(time: "9am Dose", wasAdministered: true),
-                    .init(time: "5pm Dose", wasAdministered: false)
+        class UseCase: GetTrackedMedicationsUseCase {
+            func handle(_ query: GetTrackedMedicationsQuery) async throws -> GetTrackedMedicationsResponse {
+                let medications: [GetTrackedMedicationsResponse.Medication] = [
+                    .init(id: "A", name: "Lexapro", wasAdministered: false),
+                    .init(id: "B", name: "Allegra", wasAdministered: false),
                 ]
-            ),
-            .init(
-                name: "Allegra",
-                frequency: "Daily",
-                administrations: [
-                    .init(time: "9am Dose", wasAdministered: true),
-                ]
-            ),
-        ]
+                return .init(medications: medications)
+            }
+        }
 
-        return vm
+        return DailyScheduleViewModel(getDailySchedule: UseCase())
     }
 }
