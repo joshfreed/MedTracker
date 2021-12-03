@@ -1,10 +1,3 @@
-//
-//  MedicationList.swift
-//  MedTracker
-//
-//  Created by Josh Freed on 11/30/21.
-//
-
 import SwiftUI
 
 struct MedicationList: View {

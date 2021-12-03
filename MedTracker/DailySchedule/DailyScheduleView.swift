@@ -2,11 +2,27 @@ import SwiftUI
 
 struct DailyScheduleView: View {
     @StateObject var vm = DailyScheduleViewModel()
+    @State private var isAddingMedication = false
     
     var body: some View {
         NavigationView {
             ScrollView {
-                MedicationList(medications: $vm.medications)
+                VStack {
+                    MedicationList(medications: $vm.medications)
+                    Button {
+                        isAddingMedication = true
+                    } label: {
+                        Text("Track a Medication")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .tint(.blue)
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
+                    .padding([.leading, .trailing], 16)
+                    .sheet(isPresented: $isAddingMedication) {
+                        NewMedicationView()
+                    }
+                }
             }
             .background(Color("Schedule Background").ignoresSafeArea())
             .navigationTitle(vm.date)

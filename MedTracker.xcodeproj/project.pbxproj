@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
+		53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298AFF27596BC700B281C6 /* NewMedicationView.swift */; };
+		53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298B012759767100B281C6 /* NewMedicationViewModel.swift */; };
 		5329EE942757E4CA00AB058F /* JFLib.Mediator in Frameworks */ = {isa = PBXBuildFile; productRef = 5329EE932757E4CA00AB058F /* JFLib.Mediator */; };
 		5329EE9B2757EE1F00AB058F /* DailyScheduleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */; };
 		532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E765C275840660092AB85 /* MemoryAdministrations.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
+		53298AFF27596BC700B281C6 /* NewMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationView.swift; sourceTree = "<group>"; };
+		53298B012759767100B281C6 /* NewMedicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationViewModel.swift; sourceTree = "<group>"; };
 		5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModelTests.swift; sourceTree = "<group>"; };
 		532E765C275840660092AB85 /* MemoryAdministrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryAdministrations.swift; sourceTree = "<group>"; };
 		532E765F275915100092AB85 /* MedicationPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPromptView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 				53E9126927543CF100710D4C /* ScheduleSlotView.swift */,
 			);
 			path = DailySchedule;
+			sourceTree = "<group>";
+		};
+		53298AFC27595FB300B281C6 /* TrackMedication */ = {
+			isa = PBXGroup;
+			children = (
+				53298AFF27596BC700B281C6 /* NewMedicationView.swift */,
+				53298B012759767100B281C6 /* NewMedicationViewModel.swift */,
+			);
+			path = TrackMedication;
 			sourceTree = "<group>";
 		};
 		5329EE992757EE0E00AB058F /* DailySchedule */ = {
@@ -221,6 +234,7 @@
 			children = (
 				532E7665275921B10092AB85 /* Shared */,
 				53262B5227568407001C6FE9 /* DailySchedule */,
+				53298AFC27595FB300B281C6 /* TrackMedication */,
 				53E9123C27527BCE00710D4C /* MedTrackerApp.swift */,
 				53E9124027527BD000710D4C /* Assets.xcassets */,
 				53E9124227527BD000710D4C /* Preview Content */,
@@ -395,10 +409,12 @@
 				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
 				532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
+				53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */,
 				532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */,
 				53E9126827543A9000710D4C /* MedicationCard.swift in Sources */,
 				53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */,
 				53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */,
+				53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */,
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
 				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
 				53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */,

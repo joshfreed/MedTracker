@@ -8,6 +8,10 @@ var medications: [Medication] = [
 ]
 
 class MemoryMedications: MedicationRepository {
+    func add(_ medication: Medication) async throws {
+        medications.append(medication)
+    }
+
     func getAll() async throws -> [Medication] {
         medications
     }
@@ -15,4 +19,6 @@ class MemoryMedications: MedicationRepository {
     func getById(_ id: MedicationId) async throws -> Medication? {
         medications.first { $0.id == id }
     }
+
+    func save() async throws {}
 }

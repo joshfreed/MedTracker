@@ -31,6 +31,7 @@ final class MedicationModule: JFAppModule {
     func bootstrap(env: AppEnvironment, container: JFServiceContainer) {
         container.register(GetTrackedMedicationsUseCase.self) { MedicationService(medications: $0, administrations: $1) }
         container.register(RecordAdministrationUseCase.self) { MedicationService(medications: $0, administrations: $1) }
+        container.register(TrackMedicationUseCase.self) { MedicationService(medications: $0, administrations: $1) }
         container.register(MedicationRepository.self) { MemoryMedications() }
         container.register(AdministrationRepository.self) { MemoryAdministrations() }
     }
