@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 import JFLib_Services
 import JFLib_Mediator
 import MedicationApp
@@ -7,13 +8,15 @@ class DailyScheduleViewModel: ObservableObject {
     @Published private(set) var date: String = ""
     @Published var medications: [DailySchedule.Medication] = []
 
-    @Injected private var getTrackedMedications: GetTrackedMedicationsUseCase
+    @Injected private var getTrackedMedications: GetTrackedMedicationsContinuousQuery
     @Injected private var recordAdministration: RecordAdministrationUseCase
+
+    private var cancellable: AnyCancellable?
 
     init() {}
 
-    init(getDailySchedule: GetTrackedMedicationsUseCase) {
-        self.getTrackedMedications = getDailySchedule
+    init(getTrackedMedications: GetTrackedMedicationsContinuousQuery) {
+        self.getTrackedMedications = getTrackedMedications
     }
 
     deinit {
@@ -21,12 +24,18 @@ class DailyScheduleViewModel: ObservableObject {
     }
 
     func load() async {
-        do {
-            let response = try await getTrackedMedications.handle(GetTrackedMedicationsQuery(date: Date()))
-            present(response)
-        } catch {
-            fatalError("\(error)")
-        }
+        guard cancellable == nil else { return }
+
+        cancellable = getTrackedMedications
+            .subscribe(GetTrackedMedicationsQuery(date: Date()))
+            .receive(on: RunLoop.main)
+            .catch { error -> AnyPublisher<GetTrackedMedicationsResponse, Never> in
+                print("\(error)")
+                return Just(GetTrackedMedicationsResponse(medications: [])).eraseToAnyPublisher()
+            }
+            .sink { [weak self] response in
+                self?.present(response)
+            }
     }
 
     func updateAdministration(medicationId: String, wasAdministered: Bool) {
@@ -83,16 +92,16 @@ extension DailyScheduleViewModel {
 
 extension DailyScheduleViewModel {
     static func fake() -> DailyScheduleViewModel {
-        class UseCase: GetTrackedMedicationsUseCase {
-            func handle(_ query: GetTrackedMedicationsQuery) async throws -> GetTrackedMedicationsResponse {
+        class UseCase: GetTrackedMedicationsContinuousQuery {
+            func subscribe(_ query: GetTrackedMedicationsQuery) -> AnyPublisher<GetTrackedMedicationsResponse, Error> {
                 let medications: [GetTrackedMedicationsResponse.Medication] = [
                     .init(id: "A", name: "Lexapro", wasAdministered: false),
                     .init(id: "B", name: "Allegra", wasAdministered: false),
                 ]
-                return .init(medications: medications)
+                return Just(.init(medications: medications)).setFailureType(to: Error.self).eraseToAnyPublisher()
             }
         }
 
-        return DailyScheduleViewModel(getDailySchedule: UseCase())
+        return DailyScheduleViewModel(getTrackedMedications: UseCase())
     }
 }

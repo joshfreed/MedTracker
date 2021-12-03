@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NewMedicationView: View {
     @StateObject var vm = NewMedicationViewModel()
+    @Environment(\.dismiss) var dismiss
+    @FocusState private var isFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -13,6 +15,7 @@ struct NewMedicationView: View {
                             .fill(Color.white)
                     )
                     .padding([.leading, .trailing])
+                    .focused($isFocused)
 
                 Button {
                     Task {
@@ -29,9 +32,24 @@ struct NewMedicationView: View {
             }
             .padding(.top, 16)
             .navigationTitle("Track a Medication")
-            .background(
-                Color("Schedule Background").ignoresSafeArea()
-            )
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
+            .background(Color("Schedule Background").ignoresSafeArea())
+            .onChange(of: vm.medicationTracked) { isMedicationTracked in
+                if isMedicationTracked {
+                    dismiss()
+                }
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    isFocused = true
+                }
+            }
         }
     }
 }

@@ -29,6 +29,8 @@
 		53E9126827543A9000710D4C /* MedicationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126727543A9000710D4C /* MedicationCard.swift */; };
 		53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126927543CF100710D4C /* ScheduleSlotView.swift */; };
 		53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126B27543E7900710D4C /* DailyScheduleView.swift */; };
+		53F409C9275A6F3600AECAEB /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = 53F409C8275A6F3600AECAEB /* Dip */; };
+		53F409CB275A93F500AECAEB /* DipContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CA275A93F500AECAEB /* DipContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		53E9126727543A9000710D4C /* MedicationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCard.swift; sourceTree = "<group>"; };
 		53E9126927543CF100710D4C /* ScheduleSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSlotView.swift; sourceTree = "<group>"; };
 		53E9126B27543E7900710D4C /* DailyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleView.swift; sourceTree = "<group>"; };
+		53F409CA275A93F500AECAEB /* DipContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F409C9275A6F3600AECAEB /* Dip in Frameworks */,
 				53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */,
 				5329EE942757E4CA00AB058F /* JFLib.Mediator in Frameworks */,
 				53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */,
@@ -176,6 +180,7 @@
 		53D3A7FE2756DA450090B266 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				53F409C6275A5C0A00AECAEB /* DependencyInjection */,
 				53D3A7FF2756DA720090B266 /* Persistence */,
 			);
 			path = Infrastructure;
@@ -267,6 +272,14 @@
 			path = MedTrackerUITests;
 			sourceTree = "<group>";
 		};
+		53F409C6275A5C0A00AECAEB /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				53F409CA275A93F500AECAEB /* DipContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,6 +300,7 @@
 				53D3A7FC2756CEF80090B266 /* MedTrackerBiz */,
 				53D3A8052756DBC50090B266 /* JFLib.Services */,
 				5329EE932757E4CA00AB058F /* JFLib.Mediator */,
+				53F409C8275A6F3600AECAEB /* Dip */,
 			);
 			productName = MedTracker;
 			productReference = 53E9123927527BCE00710D4C /* MedTracker.app */;
@@ -362,6 +376,7 @@
 			mainGroup = 53E9123027527BCE00710D4C;
 			packageReferences = (
 				53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */,
+				53F409C7275A6F3600AECAEB /* XCRemoteSwiftPackageReference "Dip" */,
 			);
 			productRefGroup = 53E9123A27527BCE00710D4C /* Products */;
 			projectDirPath = "";
@@ -417,6 +432,7 @@
 				53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */,
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
 				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
+				53F409CB275A93F500AECAEB /* DipContainer.swift in Sources */,
 				53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */,
 				53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */,
 			);
@@ -777,6 +793,14 @@
 				kind = branch;
 			};
 		};
+		53F409C7275A6F3600AECAEB /* XCRemoteSwiftPackageReference "Dip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Dip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -793,6 +817,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */;
 			productName = JFLib.Services;
+		};
+		53F409C8275A6F3600AECAEB /* Dip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53F409C7275A6F3600AECAEB /* XCRemoteSwiftPackageReference "Dip" */;
+			productName = Dip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,12 +1,17 @@
 import SwiftUI
+import Dip
 import JFLib_Services
 import MedicationApp
 
 @main
 struct MedTrackerApp: App {
+    let env: Environment
+
     init() {
-        let serviceContainer = DipContainer()
-        MedicationModule().bootstrap(env: .live, container: serviceContainer)
+        env = .live
+
+        let serviceContainer = Dip.DependencyContainer()
+        bootstrapModules(container: serviceContainer)
         JFServices.initialize(container: serviceContainer)
     }
 
@@ -15,24 +20,29 @@ struct MedTrackerApp: App {
             DailyScheduleView()
         }
     }
+
+    enum Environment {
+        case live
+        case test
+        case preview
+    }
+
+    private func bootstrapModules(container: DependencyContainer) {
+        MedicationModule().bootstrap(env: env, container: container)
+    }
 }
 
-enum AppEnvironment {
-    case live
-    case test
-    case preview
-}
+final class MedicationModule {
+    func bootstrap(env: MedTrackerApp.Environment, container: DependencyContainer) {
+        container
+            .register(.singleton) { MedicationService(medications: $0, administrations: $1) }
+            .implements(
+                GetTrackedMedicationsContinuousQuery.self,
+                RecordAdministrationUseCase.self,
+                TrackMedicationUseCase.self
+            )
 
-protocol JFAppModule {
-    func bootstrap(env: AppEnvironment, container: JFServiceContainer)
-}
-
-final class MedicationModule: JFAppModule {
-    func bootstrap(env: AppEnvironment, container: JFServiceContainer) {
-        container.register(GetTrackedMedicationsUseCase.self) { MedicationService(medications: $0, administrations: $1) }
-        container.register(RecordAdministrationUseCase.self) { MedicationService(medications: $0, administrations: $1) }
-        container.register(TrackMedicationUseCase.self) { MedicationService(medications: $0, administrations: $1) }
-        container.register(MedicationRepository.self) { MemoryMedications() }
-        container.register(AdministrationRepository.self) { MemoryAdministrations() }
+        container.register { MemoryMedications() }.implements(MedicationRepository.self)
+        container.register { MemoryAdministrations() }.implements(AdministrationRepository.self)
     }
 }
