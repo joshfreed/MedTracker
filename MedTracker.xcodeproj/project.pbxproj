@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
+		53298AFB27594DA800B281C6 /* MedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */; };
 		53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298AFF27596BC700B281C6 /* NewMedicationView.swift */; };
 		53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298B012759767100B281C6 /* NewMedicationViewModel.swift */; };
 		5329EE942757E4CA00AB058F /* JFLib.Mediator in Frameworks */ = {isa = PBXBuildFile; productRef = 5329EE932757E4CA00AB058F /* JFLib.Mediator */; };
@@ -31,6 +32,10 @@
 		53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126B27543E7900710D4C /* DailyScheduleView.swift */; };
 		53F409C9275A6F3600AECAEB /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = 53F409C8275A6F3600AECAEB /* Dip */; };
 		53F409CB275A93F500AECAEB /* DipContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CA275A93F500AECAEB /* DipContainer.swift */; };
+		53F409CD275A978400AECAEB /* CoreDataMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CC275A978400AECAEB /* CoreDataMedications.swift */; };
+		53F409CF275A9DC200AECAEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CE275A9DC200AECAEB /* Persistence.swift */; };
+		53F409D1275AAC2C00AECAEB /* CoreDataAdministrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */; };
+		53F409D3275ABC8F00AECAEB /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409D2275ABC8F00AECAEB /* MemoryDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,7 @@
 /* Begin PBXFileReference section */
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
+		53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedTracker.xcdatamodel; sourceTree = "<group>"; };
 		53298AFF27596BC700B281C6 /* NewMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationView.swift; sourceTree = "<group>"; };
 		53298B012759767100B281C6 /* NewMedicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationViewModel.swift; sourceTree = "<group>"; };
 		5329EE9A2757EE1F00AB058F /* DailyScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModelTests.swift; sourceTree = "<group>"; };
@@ -75,6 +81,10 @@
 		53E9126927543CF100710D4C /* ScheduleSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSlotView.swift; sourceTree = "<group>"; };
 		53E9126B27543E7900710D4C /* DailyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleView.swift; sourceTree = "<group>"; };
 		53F409CA275A93F500AECAEB /* DipContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipContainer.swift; sourceTree = "<group>"; };
+		53F409CC275A978400AECAEB /* CoreDataMedications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMedications.swift; sourceTree = "<group>"; };
+		53F409CE275A9DC200AECAEB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAdministrations.swift; sourceTree = "<group>"; };
+		53F409D2275ABC8F00AECAEB /* MemoryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +210,7 @@
 			children = (
 				53D3A8022756DA910090B266 /* MemoryMedications.swift */,
 				532E765C275840660092AB85 /* MemoryAdministrations.swift */,
+				53F409D2275ABC8F00AECAEB /* MemoryDatabase.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -207,6 +218,9 @@
 		53D3A8012756DA800090B266 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				53F409CE275A9DC200AECAEB /* Persistence.swift */,
+				53F409CC275A978400AECAEB /* CoreDataMedications.swift */,
+				53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -242,6 +256,7 @@
 				53298AFC27595FB300B281C6 /* TrackMedication */,
 				53E9123C27527BCE00710D4C /* MedTrackerApp.swift */,
 				53E9124027527BD000710D4C /* Assets.xcassets */,
+				53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */,
 				53E9124227527BD000710D4C /* Preview Content */,
 			);
 			path = MedTracker;
@@ -425,10 +440,15 @@
 				532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
 				53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */,
+				53F409D3275ABC8F00AECAEB /* MemoryDatabase.swift in Sources */,
+				53F409D1275AAC2C00AECAEB /* CoreDataAdministrations.swift in Sources */,
 				532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */,
+				53F409CD275A978400AECAEB /* CoreDataMedications.swift in Sources */,
 				53E9126827543A9000710D4C /* MedicationCard.swift in Sources */,
 				53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */,
+				53F409CF275A9DC200AECAEB /* Persistence.swift in Sources */,
 				53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */,
+				53298AFB27594DA800B281C6 /* MedTracker.xcdatamodeld in Sources */,
 				53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */,
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
 				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
@@ -595,7 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MedTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = MKZS4JTX63;
+				DEVELOPMENT_TEAM = Q96RZM5NAK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -625,7 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MedTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = MKZS4JTX63;
+				DEVELOPMENT_TEAM = Q96RZM5NAK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -824,6 +844,19 @@
 			productName = Dip;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */,
+			);
+			currentVersion = 53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */;
+			path = MedTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 53E9123127527BCE00710D4C /* Project object */;
 }

@@ -88,15 +88,15 @@ extension DailyScheduleViewModel {
     }
 }
 
-// MARK: - Fakes / Previews
+// MARK: - Preview
 
 extension DailyScheduleViewModel {
-    static func fake() -> DailyScheduleViewModel {
+    static func preview() -> DailyScheduleViewModel {
         class UseCase: GetTrackedMedicationsContinuousQuery {
             func subscribe(_ query: GetTrackedMedicationsQuery) -> AnyPublisher<GetTrackedMedicationsResponse, Error> {
                 let medications: [GetTrackedMedicationsResponse.Medication] = [
                     .init(id: "A", name: "Lexapro", wasAdministered: false),
-                    .init(id: "B", name: "Allegra", wasAdministered: false),
+                    .init(id: "B", name: "Allegra", wasAdministered: true),
                 ]
                 return Just(.init(medications: medications)).setFailureType(to: Error.self).eraseToAnyPublisher()
             }

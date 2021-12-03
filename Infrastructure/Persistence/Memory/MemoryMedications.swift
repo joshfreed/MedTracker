@@ -1,23 +1,17 @@
 import Foundation
 import MedicationApp
 
-var medications: [Medication] = [
-    .init(name: "Lexapro"),
-    .init(name: "Allegra"),
-    .init(name: "Furosimide"),
-]
-
 class MemoryMedications: MedicationRepository {
     func add(_ medication: Medication) async throws {
-        medications.append(medication)
+        MemoryDatabase.shared.medications.append(medication)
     }
 
     func getAll() async throws -> [Medication] {
-        medications
+        MemoryDatabase.shared.medications
     }
 
     func getById(_ id: MedicationId) async throws -> Medication? {
-        medications.first { $0.id == id }
+        MemoryDatabase.shared.medications.first { $0.id == id }
     }
 
     func save() async throws {}

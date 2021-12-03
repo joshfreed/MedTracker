@@ -35,6 +35,6 @@ struct DailyScheduleView: View {
 
 struct DailyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyScheduleView(vm: .fake())
+        DailyScheduleView(vm: .preview())
     }
 }

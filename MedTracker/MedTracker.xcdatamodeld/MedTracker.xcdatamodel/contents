@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDAdministration" representedClassName="CDAdministration" syncable="YES" codeGenerationType="class">
+        <attribute name="administrationDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" attributeType="Date" defaultDateTimeInterval="660248340" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="medicationId" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="CDMedication" representedClassName="CDMedication" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+    </entity>
+    <elements>
+        <element name="CDMedication" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="CDAdministration" positionX="-54" positionY="9" width="128" height="103"/>
+    </elements>
+</model>
