@@ -1,42 +1,56 @@
-//
-//  MedTrackerUITests.swift
-//  MedTrackerUITests
-//
-//  Created by Josh Freed on 11/27/21.
-//
-
 import XCTest
 
 class MedTrackerUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDownWithError() throws {}
+
+    func testPrimaryFlow_add_medication_and_mark_administered() throws {
+        let app = launch()
+
+        var home = try DailySchedulePage(app: app, date: Date())
+        let newMedication = try home.trackNewMedication()
+        newMedication.typeMedicationName("My New Med")
+        home = try newMedication.submit()
+        let med = try home.getMedication(named: "My New Med")
+        XCTAssertFalse(med.wasAdministered)
+        try med.tap()
+        XCTAssertTrue(med.wasAdministered)
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func test_record_administration_for_an_existing_medication() throws {
+        let today = Date()
+        let medications: [[AnyHashable: Any]] = [
+            [
+                "id": ["uuid": UUID().uuidString],
+                "name": "Crazy Pills"
+            ]
+        ]
+        let app = launch(medications: medications)
+
+        let home = try DailySchedulePage(app: app, date: today)
+        let med = try home.getMedication(named: "Crazy Pills")
+        XCTAssertFalse(med.wasAdministered)
+        try med.tap()
+        XCTAssertTrue(med.wasAdministered)
+    }
+
+    // MARK: - Helpers
+
+    private func launch(medications: [[AnyHashable: Any]]? = nil) -> XCUIApplication {
         let app = XCUIApplication()
+
+        app.launchArguments.append("UI_TESTING")
+
+        if let medications = medications {
+            app.launchEnvironment["medications"] = medications.toJsonString()
+        }
+
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        return app
     }
 }

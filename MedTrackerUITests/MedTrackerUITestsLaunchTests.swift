@@ -1,10 +1,3 @@
-//
-//  MedTrackerUITestsLaunchTests.swift
-//  MedTrackerUITests
-//
-//  Created by Josh Freed on 11/27/21.
-//
-
 import XCTest
 
 class MedTrackerUITestsLaunchTests: XCTestCase {

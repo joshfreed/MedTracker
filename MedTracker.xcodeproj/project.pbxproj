@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */; };
+		531674E0275BCC4800CE3753 /* DailySchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DF275BCC4800CE3753 /* DailySchedulePage.swift */; };
+		531674E2275BCC6C00CE3753 /* PageErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674E1275BCC6C00CE3753 /* PageErrors.swift */; };
+		531674E5275BCC8600CE3753 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674E4275BCC8600CE3753 /* Helpers.swift */; };
+		531674E7275BCC9B00CE3753 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674E6275BCC9B00CE3753 /* Extensions.swift */; };
+		531674E9275BCDC100CE3753 /* NewMedicationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674E8275BCDC100CE3753 /* NewMedicationPage.swift */; };
+		531674EB275BCF1C00CE3753 /* MedicationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674EA275BCF1C00CE3753 /* MedicationEntry.swift */; };
+		531674EE275C154900CE3753 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674ED275C154900CE3753 /* UITestHelper.swift */; };
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
 		53298AFB27594DA800B281C6 /* MedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */; };
@@ -60,6 +67,13 @@
 /* Begin PBXFileReference section */
 		531674D9275BC5DB00CE3753 /* Logger+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+extensions.swift"; sourceTree = "<group>"; };
 		531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logErrorAndReplaceWith.swift; sourceTree = "<group>"; };
+		531674DF275BCC4800CE3753 /* DailySchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySchedulePage.swift; sourceTree = "<group>"; };
+		531674E1275BCC6C00CE3753 /* PageErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageErrors.swift; sourceTree = "<group>"; };
+		531674E4275BCC8600CE3753 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		531674E6275BCC9B00CE3753 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		531674E8275BCDC100CE3753 /* NewMedicationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationPage.swift; sourceTree = "<group>"; };
+		531674EA275BCF1C00CE3753 /* MedicationEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationEntry.swift; sourceTree = "<group>"; };
+		531674ED275C154900CE3753 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
 		53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -136,6 +150,34 @@
 			path = Combine;
 			sourceTree = "<group>";
 		};
+		531674DE275BCC2300CE3753 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				531674E1275BCC6C00CE3753 /* PageErrors.swift */,
+				531674DF275BCC4800CE3753 /* DailySchedulePage.swift */,
+				531674E8275BCDC100CE3753 /* NewMedicationPage.swift */,
+				531674EA275BCF1C00CE3753 /* MedicationEntry.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		531674E3275BCC7C00CE3753 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				531674E4275BCC8600CE3753 /* Helpers.swift */,
+				531674E6275BCC9B00CE3753 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		531674EC275C153800CE3753 /* UI Test Content */ = {
+			isa = PBXGroup;
+			children = (
+				531674ED275C154900CE3753 /* UITestHelper.swift */,
+			);
+			path = "UI Test Content";
+			sourceTree = "<group>";
+		};
 		53262B5227568407001C6FE9 /* DailySchedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,8 +194,8 @@
 		53298AFC27595FB300B281C6 /* TrackMedication */ = {
 			isa = PBXGroup;
 			children = (
-				53298AFF27596BC700B281C6 /* NewMedicationView.swift */,
 				53298B012759767100B281C6 /* NewMedicationViewModel.swift */,
+				53298AFF27596BC700B281C6 /* NewMedicationView.swift */,
 			);
 			path = TrackMedication;
 			sourceTree = "<group>";
@@ -280,6 +322,7 @@
 				53E9124027527BD000710D4C /* Assets.xcassets */,
 				53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */,
 				53E9124227527BD000710D4C /* Preview Content */,
+				531674EC275C153800CE3753 /* UI Test Content */,
 			);
 			path = MedTracker;
 			sourceTree = "<group>";
@@ -303,6 +346,8 @@
 		53E9125627527BD000710D4C /* MedTrackerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				531674DE275BCC2300CE3753 /* Pages */,
+				531674E3275BCC7C00CE3753 /* Helpers */,
 				53E9125727527BD000710D4C /* MedTrackerUITests.swift */,
 				53E9125927527BD000710D4C /* MedTrackerUITestsLaunchTests.swift */,
 			);
@@ -460,6 +505,7 @@
 				531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */,
 				531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */,
 				532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */,
+				531674EE275C154900CE3753 /* UITestHelper.swift in Sources */,
 				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
 				532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
@@ -495,7 +541,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E9125A27527BD000710D4C /* MedTrackerUITestsLaunchTests.swift in Sources */,
+				531674E7275BCC9B00CE3753 /* Extensions.swift in Sources */,
+				531674E2275BCC6C00CE3753 /* PageErrors.swift in Sources */,
 				53E9125827527BD000710D4C /* MedTrackerUITests.swift in Sources */,
+				531674E5275BCC8600CE3753 /* Helpers.swift in Sources */,
+				531674E9275BCDC100CE3753 /* NewMedicationPage.swift in Sources */,
+				531674E0275BCC4800CE3753 /* DailySchedulePage.swift in Sources */,
+				531674EB275BCF1C00CE3753 /* MedicationEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

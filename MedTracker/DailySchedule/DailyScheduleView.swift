@@ -21,6 +21,7 @@ struct DailyScheduleView: View {
                     .buttonStyle(.bordered)
                     .controlSize(.large)
                     .padding([.leading, .trailing], 16)
+                    .accessibilityIdentifier("trackMedication")
                     .sheet(isPresented: $isAddingMedication) {
                         NewMedicationView()
                     }

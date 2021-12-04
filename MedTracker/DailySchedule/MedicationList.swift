@@ -8,6 +8,8 @@ struct MedicationList: View {
             ForEach($medications) { $med in
                 DailyMedicationView(medication: med.name, wasAdministered: $med.wasAdministered)
                     .card()
+                    .accessibilityElement(children: .contain)
+                    .accessibilityIdentifier("Medication Entry: \(med.name)")
             }
         }
         .padding([.leading, .trailing], 16)

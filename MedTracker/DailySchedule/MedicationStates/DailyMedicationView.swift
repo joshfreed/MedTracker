@@ -16,6 +16,8 @@ struct DailyMedicationView: View {
             Text(medication)
             Spacer()
             Image(systemName: wasAdministered ? "checkmark.circle" : "circle")
+                .accessibilityIdentifier("administrationState")
+                .accessibilityValue(wasAdministered ? "Administered" : "Not Administered")
         }
         .padding()
         .contentShape(Rectangle())

@@ -16,6 +16,7 @@ struct NewMedicationView: View {
                     )
                     .padding([.leading, .trailing])
                     .focused($isFocused)
+                    .accessibilityIdentifier("medicationName")
 
                 Button {
                     Task {
@@ -27,6 +28,7 @@ struct NewMedicationView: View {
                 .tint(.blue)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
+                .accessibilityIdentifier("submit")
 
                 Spacer()
             }
