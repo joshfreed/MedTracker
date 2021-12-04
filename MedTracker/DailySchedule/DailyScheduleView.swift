@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct DailyScheduleView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject var vm = DailyScheduleViewModel()
     @State private var isAddingMedication = false
     
@@ -28,7 +29,15 @@ struct DailyScheduleView: View {
             .navigationTitle(vm.date)
         }
         .task {
-            await vm.load()
+            vm.load()
+        }
+        .onChange(of: scenePhase) { phase in
+            print(phase)
+            if phase == .background {
+                vm.cancel()
+            } else if phase == .active {
+                vm.load()
+            }
         }
     }
 }

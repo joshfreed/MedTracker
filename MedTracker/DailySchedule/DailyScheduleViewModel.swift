@@ -23,19 +23,29 @@ class DailyScheduleViewModel: ObservableObject {
         print("deinit")
     }
 
-    func load() async {
+    func load() {
+        print("load")
+        
         guard cancellable == nil else { return }
 
+        let date = Date()
+
+        print("loading meds for \(date)")
+
         cancellable = getTrackedMedications
-            .subscribe(GetTrackedMedicationsQuery(date: Date()))
+            .subscribe(GetTrackedMedicationsQuery(date: date))
             .receive(on: RunLoop.main)
             .catch { error -> AnyPublisher<GetTrackedMedicationsResponse, Never> in
                 print("\(error)")
-                return Just(GetTrackedMedicationsResponse(medications: [])).eraseToAnyPublisher()
+                return Just(GetTrackedMedicationsResponse(date: date, medications: [])).eraseToAnyPublisher()
             }
             .sink { [weak self] response in
                 self?.present(response)
             }
+    }
+
+    func cancel() {
+        cancellable = nil
     }
 
     func updateAdministration(medicationId: String, wasAdministered: Bool) {
@@ -76,8 +86,10 @@ extension DailySchedule {
 
 extension DailyScheduleViewModel {
     func present(_ response: GetTrackedMedicationsResponse) {
-        date = "Nov 30th, 2021"
-        
+        let df = DateFormatter()
+        df.dateFormat = "MMMM d"
+        date = df.string(from: response.date)
+
         medications = response.medications.map {
             .init(id: $0.id, name: $0.name, wasAdministered: $0.wasAdministered)
         }
@@ -98,7 +110,9 @@ extension DailyScheduleViewModel {
                     .init(id: "A", name: "Lexapro", wasAdministered: false),
                     .init(id: "B", name: "Allegra", wasAdministered: true),
                 ]
-                return Just(.init(medications: medications)).setFailureType(to: Error.self).eraseToAnyPublisher()
+                return Just(.init(date: Date(), medications: medications))
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
             }
         }
 
