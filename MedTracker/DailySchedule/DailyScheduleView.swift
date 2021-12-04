@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 struct DailyScheduleView: View {
     @Environment(\.scenePhase) private var scenePhase
@@ -32,7 +33,7 @@ struct DailyScheduleView: View {
             vm.load()
         }
         .onChange(of: scenePhase) { phase in
-            print(phase)
+            Logger.dailySchedule.debug("\(String(describing: phase))")
             if phase == .background {
                 vm.cancel()
             } else if phase == .active {

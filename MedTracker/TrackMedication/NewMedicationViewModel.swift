@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import JFLib_Services
 import MedicationApp
 
@@ -8,14 +9,6 @@ class NewMedicationViewModel: ObservableObject {
     @Published var errorTrackingMedication = false
 
     @Injected private var trackMedication: TrackMedicationUseCase
-
-    init() {
-        print("NewMedicationViewModel::init")
-    }
-
-    deinit {
-        print("NewMedicationViewModel::deinit")
-    }
 
     func submit() async {
         medicationTracked = false
@@ -27,6 +20,7 @@ class NewMedicationViewModel: ObservableObject {
             try await trackMedication.handle(command)
             medicationTracked = true
         } catch {
+            Logger.trackMedication.error(error)
             errorTrackingMedication = true
             fatalError("\(error)")
         }

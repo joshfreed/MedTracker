@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import Combine
 import JFLib_Services
 import JFLib_Mediator
@@ -13,32 +14,32 @@ class DailyScheduleViewModel: ObservableObject {
 
     private var cancellable: AnyCancellable?
 
-    init() {}
+    init() {
+        Logger.dailySchedule.debug("init")
+    }
 
     init(getTrackedMedications: GetTrackedMedicationsContinuousQuery) {
+        Logger.dailySchedule.debug("init")
         self.getTrackedMedications = getTrackedMedications
     }
 
     deinit {
-        print("deinit")
+        Logger.dailySchedule.debug("deinit")
     }
 
     func load() {
-        print("load")
+        Logger.dailySchedule.debug("load")
         
         guard cancellable == nil else { return }
 
         let date = Date()
 
-        print("loading meds for \(date)")
+        Logger.dailySchedule.debug("loading meds for \(date)")
 
         cancellable = getTrackedMedications
             .subscribe(GetTrackedMedicationsQuery(date: date))
             .receive(on: RunLoop.main)
-            .catch { error -> AnyPublisher<GetTrackedMedicationsResponse, Never> in
-                print("\(error)")
-                return Just(GetTrackedMedicationsResponse(date: date, medications: [])).eraseToAnyPublisher()
-            }
+            .logError(to: .dailySchedule, andReplaceWith: GetTrackedMedicationsResponse(date: date, medications: []))
             .sink { [weak self] response in
                 self?.present(response)
             }
@@ -54,6 +55,7 @@ class DailyScheduleViewModel: ObservableObject {
                 do {
                     try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
                 } catch {
+                    Logger.dailySchedule.error(error)
                     fatalError("\(error)")
                 }
             }

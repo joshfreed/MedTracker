@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
+		531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */; };
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
 		53298AFB27594DA800B281C6 /* MedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531674D9275BC5DB00CE3753 /* Logger+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+extensions.swift"; sourceTree = "<group>"; };
+		531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logErrorAndReplaceWith.swift; sourceTree = "<group>"; };
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
 		53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -116,6 +120,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		531674D8275BC59A00CE3753 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				531674D9275BC5DB00CE3753 /* Logger+extensions.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		531674DB275BC7D300CE3753 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		53262B5227568407001C6FE9 /* DailySchedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +210,8 @@
 		53D3A7FE2756DA450090B266 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				531674DB275BC7D300CE3753 /* Combine */,
+				531674D8275BC59A00CE3753 /* Logging */,
 				53F409C6275A5C0A00AECAEB /* DependencyInjection */,
 				53D3A7FF2756DA720090B266 /* Persistence */,
 			);
@@ -435,6 +457,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */,
+				531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */,
 				532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */,
 				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
 				532E765D275840660092AB85 /* MemoryAdministrations.swift in Sources */,
