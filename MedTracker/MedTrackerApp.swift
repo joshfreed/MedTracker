@@ -7,7 +7,6 @@ import MedicationApp
 @main
 struct MedTrackerApp: App {
     let env: Environment
-    let persistenceController = PersistenceController.shared
 
     init() {
         env = Environment.autodetect
@@ -49,6 +48,7 @@ struct MedTrackerApp: App {
     private func prepareUITesting() {
         Task {
             try! await UITestHelper().loadMedications()
+            try! await UITestHelper().loadAdministrations()
         }
     }
 }
@@ -60,6 +60,7 @@ final class MedicationModule {
             .implements(
                 GetTrackedMedicationsContinuousQuery.self,
                 RecordAdministrationUseCase.self,
+                RemoveAdministrationUseCase.self,
                 TrackMedicationUseCase.self
             )
 

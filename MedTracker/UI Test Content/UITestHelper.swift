@@ -19,4 +19,21 @@ class UITestHelper {
             fatalError("\(error)")
         }
     }
+
+    func loadAdministrations() async throws {
+        guard let json = ProcessInfo.processInfo.environment["administrations"] else {
+            return
+        }
+
+        do {
+            let models = try JSONDecoder().decode([Administration].self, from: Data(json.utf8))
+            let repo: AdministrationRepository = try JFServices.resolve()
+            for model in models {
+                try await repo.add(model)
+            }
+            try await repo.save()
+        } catch {
+            fatalError("\(error)")
+        }
+    }
 }

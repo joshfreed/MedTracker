@@ -11,6 +11,7 @@ class DailyScheduleViewModel: ObservableObject {
 
     @Injected private var getTrackedMedications: GetTrackedMedicationsContinuousQuery
     @Injected private var recordAdministration: RecordAdministrationUseCase
+    @Injected private var removeAdministration: RemoveAdministrationUseCase
 
     private var cancellable: AnyCancellable?
 
@@ -51,13 +52,15 @@ class DailyScheduleViewModel: ObservableObject {
 
     func updateAdministration(medicationId: String, wasAdministered: Bool) {
         Task {
-            if wasAdministered {
-                do {
+            do {
+                if wasAdministered {
                     try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
-                } catch {
-                    Logger.dailySchedule.error(error)
-                    fatalError("\(error)")
+                } else {
+                    try await removeAdministration.handle(RemoveAdministrationCommand(medicationId: medicationId))
                 }
+            } catch {
+                Logger.dailySchedule.error(error)
+                fatalError("\(error)")
             }
         }
     }
