@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530C5BEC275EAD030089B69F /* MedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */; };
+		530C5BED275EADBD0089B69F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CE275A9DC200AECAEB /* Persistence.swift */; };
+		530C5BEF275EADDF0089B69F /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 530C5BEE275EADDF0089B69F /* MedTrackerBiz */; };
+		530C5BF0275EAE410089B69F /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
+		530C5BF1275EAE500089B69F /* CoreDataMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CC275A978400AECAEB /* CoreDataMedications.swift */; };
+		530C5BF2275EAE520089B69F /* CoreDataAdministrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */; };
 		531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */; };
 		531674E0275BCC4800CE3753 /* DailySchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DF275BCC4800CE3753 /* DailySchedulePage.swift */; };
@@ -141,6 +147,7 @@
 		532E7667275921CC0092AB85 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		536EAC6D275E960B007AAD9B /* IntentDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentDonationService.swift; sourceTree = "<group>"; };
 		536EAC71275E989E007AAD9B /* EmptyDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDonationService.swift; sourceTree = "<group>"; };
+		536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MedTrackerRelease.entitlements; sourceTree = "<group>"; };
 		53D3A7FA2756CE4F0090B266 /* MedTrackerBiz */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MedTrackerBiz; path = ../MedTrackerBiz; sourceTree = "<group>"; };
 		53D3A8022756DA910090B266 /* MemoryMedications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryMedications.swift; sourceTree = "<group>"; };
 		53E9123927527BCE00710D4C /* MedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +166,7 @@
 		53F409CE275A9DC200AECAEB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAdministrations.swift; sourceTree = "<group>"; };
 		53F409D2275ABC8F00AECAEB /* MemoryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
+		53FAEFB0275EABD300786858 /* AppIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppIntents.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530C5BEF275EADDF0089B69F /* MedTrackerBiz in Frameworks */,
 				53167521275C202500CE3753 /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				531674F4275C1D0900CE3753 /* MedTracker.entitlements */,
+				536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */,
 				53E9124027527BD000710D4C /* Assets.xcassets */,
 				53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */,
 				531674F1275C179D00CE3753 /* Intents.intentdefinition */,
@@ -264,6 +274,7 @@
 		53167522275C202500CE3753 /* AppIntents */ = {
 			isa = PBXGroup;
 			children = (
+				53FAEFB0275EABD300786858 /* AppIntents.entitlements */,
 				53167525275C202500CE3753 /* Info.plist */,
 				53167523275C202500CE3753 /* IntentHandler.swift */,
 				5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */,
@@ -497,6 +508,9 @@
 			dependencies = (
 			);
 			name = AppIntents;
+			packageProductDependencies = (
+				530C5BEE275EADDF0089B69F /* MedTrackerBiz */,
+			);
 			productName = AppIntents;
 			productReference = 53167520275C202500CE3753 /* AppIntents.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -682,8 +696,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53167541275C212600CE3753 /* Intents.intentdefinition in Sources */,
+				530C5BEC275EAD030089B69F /* MedTracker.xcdatamodeld in Sources */,
 				53167524275C202500CE3753 /* IntentHandler.swift in Sources */,
+				530C5BF0275EAE410089B69F /* EmptyDonationService.swift in Sources */,
+				530C5BF2275EAE520089B69F /* CoreDataAdministrations.swift in Sources */,
 				53167540275C20B200CE3753 /* LogMedicationIntentHandler.swift in Sources */,
+				530C5BED275EADBD0089B69F /* Persistence.swift in Sources */,
+				530C5BF1275EAE500089B69F /* CoreDataMedications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +860,7 @@
 		5316753D275C202500CE3753 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppIntents/AppIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q96RZM5NAK;
@@ -866,6 +886,7 @@
 		5316753E275C202500CE3753 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppIntents/AppIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q96RZM5NAK;
@@ -1010,7 +1031,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MedTracker/MedTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MedTracker/Resources/MedTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MedTracker/Preview Content\"";
@@ -1043,7 +1064,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MedTracker/MedTrackerRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MedTracker/Resources/MedTrackerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MedTracker/Preview Content\"";
@@ -1245,6 +1266,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		530C5BEE275EADDF0089B69F /* MedTrackerBiz */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MedTrackerBiz;
+		};
 		5329EE932757E4CA00AB058F /* JFLib.Mediator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */;

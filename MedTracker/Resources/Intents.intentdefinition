@@ -21,8 +21,14 @@
 			<string>generic</string>
 			<key>INIntentConfigurable</key>
 			<true/>
+			<key>INIntentDescription</key>
+			<string>Records that you've taken a medication today.</string>
 			<key>INIntentDescriptionID</key>
 			<string>n9YHFR</string>
+			<key>INIntentInput</key>
+			<string>medication</string>
+			<key>INIntentKeyParameter</key>
+			<string>medication</string>
 			<key>INIntentLastParameterTag</key>
 			<integer>1</integer>
 			<key>INIntentManagedParameterCombinations</key>
@@ -74,6 +80,8 @@
 						<string>Sentences</string>
 						<key>INIntentParameterMetadataDefaultValueID</key>
 						<string>mJLSZO</string>
+						<key>INIntentParameterMetadataDisableAutocorrect</key>
+						<true/>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>medication</string>
@@ -114,7 +122,7 @@
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>63q2O9</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Okay, I've recorded that you've taken your ${medicationName} today.</string>
+						<string>I've recorded that you've taken your ${medicationName} today.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>geXHHN</string>
 						<key>INIntentResponseCodeName</key>
@@ -129,6 +137,8 @@
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>1</integer>
+				<key>INIntentResponseOutput</key>
+				<string>medicationName</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>

@@ -16,6 +16,7 @@ class IntentDonationService: ShortcutDonationService {
         intent.suggestedInvocationPhrase = "Log \(domainEvent.medicationName)"
 
         let interaction = INInteraction(intent: intent, response: nil)
+        interaction.identifier = domainEvent.id.description
         interaction.donate()
     }
 }
