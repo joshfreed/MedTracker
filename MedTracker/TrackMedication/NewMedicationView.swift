@@ -12,7 +12,7 @@ struct NewMedicationView: View {
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.white)
+                            .fill(Color("Card BG"))
                     )
                     .padding([.leading, .trailing])
                     .focused($isFocused)

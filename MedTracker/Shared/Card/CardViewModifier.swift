@@ -5,7 +5,7 @@ struct CardViewModifier: ViewModifier {
         content
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.white)
+                    .fill(Color("Card BG"))
                     .shadow(color: Color.black.opacity(0.4), radius: 2, x: 1, y: 2)
             )
     }
