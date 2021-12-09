@@ -46,6 +46,7 @@
 		532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7667275921CC0092AB85 /* CardViewModifier.swift */; };
 		536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC6D275E960B007AAD9B /* IntentDonationService.swift */; };
 		536EAC72275E989E007AAD9B /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
+		5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A7FC2756CEF80090B266 /* MedTrackerBiz */; };
 		53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D3A8022756DA910090B266 /* MemoryMedications.swift */; };
 		53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A8052756DBC50090B266 /* JFLib.Services */; };
@@ -421,10 +422,10 @@
 				53E9123B27527BCE00710D4C /* MedTracker */,
 				53E9124C27527BD000710D4C /* MedTrackerTests */,
 				53E9125627527BD000710D4C /* MedTrackerUITests */,
-				53D3A7FE2756DA450090B266 /* Infrastructure */,
-				53D3A7F92756CE4F0090B266 /* Packages */,
 				53167522275C202500CE3753 /* AppIntents */,
 				5316752C275C202500CE3753 /* AppIntentsUI */,
+				53D3A7FE2756DA450090B266 /* Infrastructure */,
+				53D3A7F92756CE4F0090B266 /* Packages */,
 				53E9123A27527BCE00710D4C /* Products */,
 				53D3A7FB2756CEF80090B266 /* Frameworks */,
 			);
@@ -701,6 +702,7 @@
 				530C5BF0275EAE410089B69F /* EmptyDonationService.swift in Sources */,
 				530C5BF2275EAE520089B69F /* CoreDataAdministrations.swift in Sources */,
 				53167540275C20B200CE3753 /* LogMedicationIntentHandler.swift in Sources */,
+				5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */,
 				530C5BED275EADBD0089B69F /* Persistence.swift in Sources */,
 				530C5BF1275EAE500089B69F /* CoreDataMedications.swift in Sources */,
 			);

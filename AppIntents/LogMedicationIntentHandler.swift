@@ -1,33 +1,31 @@
-import Foundation
 import Intents
+import OSLog
 import MedicationApp
 
 class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
+    private let recordAdministration: RecordAdministrationUseCase
+    private let logger = Logger.main
+
+    init(recordAdministration: RecordAdministrationUseCase) {
+        self.recordAdministration = recordAdministration
+    }
+
     func handle(intent: LogMedicationIntent) async -> LogMedicationIntentResponse {
-        print("Handling intent")
+        logger.debug("Handling intent")
 
         guard let medicationName = intent.medication else {
             fatalError("no name?")
         }
 
-        let context = PersistenceController.shared.container.viewContext
-
-        let medicationService = MedicationService(
-            medications: CoreDataMedications(context: context),
-            administrations: CoreDataAdministrations(context: context),
-            shortcutDonation: EmptyDonationService()
-        )
-
         do {
-            print("Log Medication \(medicationName)")
             let command = RecordAdministrationByNameCommand(medicationName: medicationName)
-            try await medicationService.handle(command)
-            print("Medication logged")
+            try await recordAdministration.handle(command)
+
             let response = LogMedicationIntentResponse(code: .success, userActivity: nil)
             response.medicationName = medicationName
             return response
         } catch {
-            print("Failed to log: \(error)")
+            logger.error(error)
             return .init(code: .failure, userActivity: nil)
         }
     }

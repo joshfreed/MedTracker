@@ -39,7 +39,7 @@ class MedTrackerUITests: XCTestCase {
     }
 
     func test_remove_the_recorded_administration_of_a_medication() throws {
-        // Given\
+        // Given
         let today = Date()
         let medicationId = ["uuid": UUID().uuidString]
         let medications: [[AnyHashable: Any]] = [
