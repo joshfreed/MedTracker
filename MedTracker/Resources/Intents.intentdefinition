@@ -11,9 +11,9 @@
 	<key>INIntentDefinitionSystemVersion</key>
 	<string>21A559</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>13A233</string>
+	<string>13A1030d</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>13.0</string>
+	<string>13.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -133,6 +133,32 @@
 					<dict>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>I couldn't find a medication called ${medicationName}</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>wWxK4k</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>I couldn't find a medication called ${medicationName}</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>a4k1ig</string>
+						<key>INIntentResponseCodeName</key>
+						<string>notFound</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>You've already logged your ${medicationName} today.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>yB1DSj</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>You've already logged your ${medicationName} today.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>8IJV0H</string>
+						<key>INIntentResponseCodeName</key>
+						<string>alreadyLogged</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>

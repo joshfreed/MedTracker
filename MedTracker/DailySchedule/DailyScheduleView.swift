@@ -37,7 +37,7 @@ struct DailyScheduleView: View {
             vm.load()
         }
         .onChange(of: scenePhase) { phase in
-            Logger.dailySchedule.debug("\(String(describing: phase))")
+            Logger.dailySchedule.debug("\(String(describing: phase), privacy: .public)")
             if phase == .background {
                 vm.cancel()
             } else if phase == .active {

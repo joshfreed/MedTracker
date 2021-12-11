@@ -36,11 +36,12 @@ class DailyScheduleViewModel: ObservableObject {
 
         let date = Date()
 
-        Logger.dailySchedule.debug("loading meds for \(date)")
+        Logger.dailySchedule.debug("loading meds for \(date, privacy: .public)")
 
         cancellable = getTrackedMedications
             .subscribe(GetTrackedMedicationsQuery(date: date))
             .receive(on: RunLoop.main)
+            .print("GetTrackedMedicationsQuery", to: self)
             .logError(to: .dailySchedule, andReplaceWith: GetTrackedMedicationsResponse(date: date, medications: []))
             .sink { [weak self] response in
                 self?.present(response)
@@ -50,26 +51,58 @@ class DailyScheduleViewModel: ObservableObject {
     func cancel() {
         cancellable = nil
     }
+}
 
+// MARK: Record or Remove Administration
+
+extension DailyScheduleViewModel {
     func updateAdministration(medicationId: String, wasAdministered: Bool) {
         Task {
-            do {
-                if wasAdministered {
-                    try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
-                } else {
-                    try await removeAdministration.handle(RemoveAdministrationCommand(medicationId: medicationId))
-                }
-            } catch {
-                Logger.dailySchedule.error(error)
-                fatalError("\(error)")
-            }
+            await updateAdministrationAsync(medicationId: medicationId, wasAdministered: wasAdministered)
         }
+    }
+
+    private func updateAdministrationAsync(medicationId: String, wasAdministered: Bool) async {
+        if wasAdministered {
+            await recordAdministration(medicationId: medicationId)
+        } else {
+            await removeAdministration(medicationId: medicationId)
+        }
+    }
+
+    private func recordAdministration(medicationId: String) async {
+        do {
+            try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
+        } catch RecordAdministrationError.administrationAlreadyRecorded {
+            Logger.dailySchedule.warning("Tried to record an administration for a medication that was already logged today.")
+        } catch {
+            Logger.dailySchedule.error(error)
+            fatalError("\(error)")
+        }
+    }
+
+    private func removeAdministration(medicationId: String) async {
+        do {
+            try await removeAdministration.handle(RemoveAdministrationCommand(medicationId: medicationId))
+        } catch {
+            Logger.dailySchedule.error(error)
+            fatalError("\(error)")
+        }
+    }
+}
+
+// MARK: TextOutputStream
+
+extension DailyScheduleViewModel: TextOutputStream {
+    func write(_ string: String) {
+        guard !string.isEmpty && string != "\n" else { return }
+        Logger.dailySchedule.debug("\(string, privacy: .public)")
     }
 }
 
 // MARK: - Model
 
-class DailySchedule {}
+enum DailySchedule {}
 
 extension DailySchedule {
 

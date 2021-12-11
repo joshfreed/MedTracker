@@ -32,6 +32,10 @@
 		53167538275C202500CE3753 /* AppIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53167520275C202500CE3753 /* AppIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		53167540275C20B200CE3753 /* LogMedicationIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */; };
 		53167541275C212600CE3753 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 531674F1275C179D00CE3753 /* Intents.intentdefinition */; };
+		531860482764F60B006F2B15 /* LogMedicationIntentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531860472764F60B006F2B15 /* LogMedicationIntentHandlerTests.swift */; };
+		5318604C2764F670006F2B15 /* MockRecordAdministrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318604B2764F670006F2B15 /* MockRecordAdministrationUseCase.swift */; };
+		5318604F2764F890006F2B15 /* LogMedicationIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */; };
+		531860512765137D006F2B15 /* MockGetTrackedMedicationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531860502765137D006F2B15 /* MockGetTrackedMedicationsUseCase.swift */; };
 		53262B5427568443001C6FE9 /* MedicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B5327568443001C6FE9 /* MedicationList.swift */; };
 		53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */; };
 		53298AFB27594DA800B281C6 /* MedTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53298AF927594DA800B281C6 /* MedTracker.xcdatamodeld */; };
@@ -135,6 +139,9 @@
 		53167530275C202500CE3753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		53167532275C202500CE3753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMedicationIntentHandler.swift; sourceTree = "<group>"; };
+		531860472764F60B006F2B15 /* LogMedicationIntentHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMedicationIntentHandlerTests.swift; sourceTree = "<group>"; };
+		5318604B2764F670006F2B15 /* MockRecordAdministrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecordAdministrationUseCase.swift; sourceTree = "<group>"; };
+		531860502765137D006F2B15 /* MockGetTrackedMedicationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetTrackedMedicationsUseCase.swift; sourceTree = "<group>"; };
 		53262B5327568443001C6FE9 /* MedicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationList.swift; sourceTree = "<group>"; };
 		53262B552756849E001C6FE9 /* DailyScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewModel.swift; sourceTree = "<group>"; };
 		53298AFA27594DA800B281C6 /* MedTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -278,7 +285,6 @@
 				53FAEFB0275EABD300786858 /* AppIntents.entitlements */,
 				53167525275C202500CE3753 /* Info.plist */,
 				53167523275C202500CE3753 /* IntentHandler.swift */,
-				5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */,
 			);
 			path = AppIntents;
 			sourceTree = "<group>";
@@ -291,6 +297,47 @@
 				53167532275C202500CE3753 /* Info.plist */,
 			);
 			path = AppIntentsUI;
+			sourceTree = "<group>";
+		};
+		531860462764F5F9006F2B15 /* AppIntent */ = {
+			isa = PBXGroup;
+			children = (
+				531860472764F60B006F2B15 /* LogMedicationIntentHandlerTests.swift */,
+			);
+			path = AppIntent;
+			sourceTree = "<group>";
+		};
+		531860492764F647006F2B15 /* Test Support */ = {
+			isa = PBXGroup;
+			children = (
+				5318604A2764F657006F2B15 /* Mocks */,
+			);
+			path = "Test Support";
+			sourceTree = "<group>";
+		};
+		5318604A2764F657006F2B15 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5318604B2764F670006F2B15 /* MockRecordAdministrationUseCase.swift */,
+				531860502765137D006F2B15 /* MockGetTrackedMedicationsUseCase.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5318604D2764F765006F2B15 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5318604E2764F76B006F2B15 /* Intents */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5318604E2764F76B006F2B15 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		53262B5227568407001C6FE9 /* DailySchedule */ = {
@@ -419,6 +466,7 @@
 		53E9123027527BCE00710D4C = {
 			isa = PBXGroup;
 			children = (
+				5318604D2764F765006F2B15 /* Shared */,
 				53E9123B27527BCE00710D4C /* MedTracker */,
 				53E9124C27527BD000710D4C /* MedTrackerTests */,
 				53E9125627527BD000710D4C /* MedTrackerUITests */,
@@ -469,6 +517,8 @@
 		53E9124C27527BD000710D4C /* MedTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				531860492764F647006F2B15 /* Test Support */,
+				531860462764F5F9006F2B15 /* AppIntent */,
 				5329EE992757EE0E00AB058F /* DailySchedule */,
 			);
 			path = MedTrackerTests;
@@ -742,6 +792,7 @@
 				53298B022759767100B281C6 /* NewMedicationViewModel.swift in Sources */,
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
 				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
+				5318604F2764F890006F2B15 /* LogMedicationIntentHandler.swift in Sources */,
 				53F409CB275A93F500AECAEB /* DipContainer.swift in Sources */,
 				53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */,
 				53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */,
@@ -753,7 +804,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531860482764F60B006F2B15 /* LogMedicationIntentHandlerTests.swift in Sources */,
 				5329EE9B2757EE1F00AB058F /* DailyScheduleViewModelTests.swift in Sources */,
+				531860512765137D006F2B15 /* MockGetTrackedMedicationsUseCase.swift in Sources */,
+				5318604C2764F670006F2B15 /* MockRecordAdministrationUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,3 @@
-//
-//  DailyScheduleViewModelTests.swift
-//  MedTrackerTests
-//
-//  Created by Josh Freed on 12/1/21.
-//
-
 import XCTest
 
 class DailyScheduleViewModelTests: XCTestCase {

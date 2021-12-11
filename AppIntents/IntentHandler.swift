@@ -14,7 +14,10 @@ class IntentHandler: INExtension {
 
     override func handler(for intent: INIntent) -> Any? {
         if intent is LogMedicationIntent {
-            return LogMedicationIntentHandler(recordAdministration: medicationService)
+            return LogMedicationIntentHandler(
+                recordAdministration: medicationService,
+                getTrackedMedications: medicationService
+            )
         }
 
         return nil
