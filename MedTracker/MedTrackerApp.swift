@@ -1,12 +1,15 @@
 import SwiftUI
 import OSLog
+import Combine
 import Dip
 import JFLib_Services
 import MedicationApp
+import CoreData
 
 @main
 struct MedTrackerApp: App {
-    let env: Environment
+    private let env: Environment
+    private let coreDataSaveListener = CoreDataSaveListener()
 
     init() {
         env = Environment.autodetect
@@ -14,9 +17,7 @@ struct MedTrackerApp: App {
         let serviceContainer = Dip.DependencyContainer()
         bootstrapModules(container: serviceContainer)
         JFServices.initialize(container: serviceContainer)
-        if env == .test {
-            prepareUITesting()
-        }
+        bootstrapEnvironment()
     }
 
     var body: some Scene {
@@ -25,6 +26,29 @@ struct MedTrackerApp: App {
         }
     }
 
+    private func bootstrapModules(container: DependencyContainer) {
+        MedicationModule().bootstrap(env: env, container: container)
+    }
+
+    private func bootstrapEnvironment() {
+        switch env {
+        case .live:
+            coreDataSaveListener.listenForCoreDataUpdates()
+        case .preview: break
+        case .test:
+            prepareUITesting()
+        }
+    }
+
+    private func prepareUITesting() {
+        Task {
+            try! await UITestHelper().loadMedications()
+            try! await UITestHelper().loadAdministrations()
+        }
+    }
+}
+
+extension MedTrackerApp {
     enum Environment {
         case live
         case test
@@ -38,17 +62,6 @@ struct MedTrackerApp: App {
             } else {
                 return .live
             }
-        }
-    }
-
-    private func bootstrapModules(container: DependencyContainer) {
-        MedicationModule().bootstrap(env: env, container: container)
-    }
-
-    private func prepareUITesting() {
-        Task {
-            try! await UITestHelper().loadMedications()
-            try! await UITestHelper().loadAdministrations()
         }
     }
 }
