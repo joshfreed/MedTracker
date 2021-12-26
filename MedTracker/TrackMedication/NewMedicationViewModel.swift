@@ -10,6 +10,12 @@ class NewMedicationViewModel: ObservableObject {
 
     @Injected private var trackMedication: TrackMedicationUseCase
 
+    init() {}
+
+    init(trackMedication: TrackMedicationUseCase) {
+        self.trackMedication = trackMedication
+    }
+
     func submit() async {
         medicationTracked = false
         errorTrackingMedication = false
@@ -24,5 +30,17 @@ class NewMedicationViewModel: ObservableObject {
             errorTrackingMedication = true
             fatalError("\(error)")
         }
+    }
+}
+
+// MARK: - Preview
+
+extension NewMedicationViewModel {
+    static func preview() -> NewMedicationViewModel {
+        class UseCase: TrackMedicationUseCase {
+            func handle(_ command: TrackMedicationCommand) async throws {}
+        }
+
+        return NewMedicationViewModel(trackMedication: UseCase())
     }
 }

@@ -58,6 +58,11 @@ struct NewMedicationView: View {
 
 struct NewMedicationView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMedicationView()
+        // Here we've wrapped the view in a ZStack so that it won't be the top-level View in our Preview,
+        // to avoid the known bug that causes the `@FocusState` property of a top-level View rendered
+        // inside of a Preview, to not work properly.
+        ZStack {
+            NewMedicationView(vm: .preview())
+        }
     }
 }
