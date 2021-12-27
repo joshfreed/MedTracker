@@ -56,6 +56,7 @@
 		53880C1E276CEED20088A411 /* CoreDataSavePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E24F64276AA61500AE0DB9 /* CoreDataSavePublisher.swift */; };
 		53880C21276D54950088A411 /* CoreDataNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53880C20276D54950088A411 /* CoreDataNotifier.swift */; };
 		53880C22276D54950088A411 /* CoreDataNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53880C20276D54950088A411 /* CoreDataNotifier.swift */; };
+		538F8BB5277A006D0023C5E5 /* MedTrackerWidgetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */; };
 		5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53A35FB82778C7C400D12C8C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A35FB72778C7C400D12C8C /* WidgetKit.framework */; };
 		53A35FBA2778C7C400D12C8C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A35FB92778C7C400D12C8C /* SwiftUI.framework */; };
@@ -194,6 +195,7 @@
 		536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MedTrackerRelease.entitlements; sourceTree = "<group>"; };
 		53880C1C276CEECC0088A411 /* CoreDataSaveListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSaveListener.swift; sourceTree = "<group>"; };
 		53880C20276D54950088A411 /* CoreDataNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNotifier.swift; sourceTree = "<group>"; };
+		538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerWidgetCenter.swift; sourceTree = "<group>"; };
 		53A35FB62778C7C400D12C8C /* AppWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A35FB72778C7C400D12C8C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		53A35FB92778C7C400D12C8C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -479,6 +481,14 @@
 			path = SaveNotifications;
 			sourceTree = "<group>";
 		};
+		538F8BB3277A00540023C5E5 /* WidgetCenter */ = {
+			isa = PBXGroup;
+			children = (
+				538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */,
+			);
+			path = WidgetCenter;
+			sourceTree = "<group>";
+		};
 		53A35FBB2778C7C400D12C8C /* AppWidgets */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +550,7 @@
 				53F409C6275A5C0A00AECAEB /* DependencyInjection */,
 				53D3A7FF2756DA720090B266 /* Persistence */,
 				536EAC6F275E968F007AAD9B /* Shortcuts */,
+				538F8BB3277A00540023C5E5 /* WidgetCenter */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -971,6 +982,7 @@
 				53F409CB275A93F500AECAEB /* DipContainer.swift in Sources */,
 				53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */,
 				53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */,
+				538F8BB5277A006D0023C5E5 /* MedTrackerWidgetCenter.swift in Sources */,
 				536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

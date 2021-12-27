@@ -15,7 +15,8 @@ class DefaultMedTrackerApp: MedTrackerApp {
         return MedicationService(
             medications: CoreDataMedications(context: context),
             administrations: CoreDataAdministrations(context: context),
-            shortcutDonation: EmptyDonationService()
+            shortcutDonation: EmptyDonationService(),
+            widgetService: EmptyWidgetService()
         )
     }()
 
