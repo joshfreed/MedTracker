@@ -82,6 +82,7 @@
 		53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A7FC2756CEF80090B266 /* MedTrackerBiz */; };
 		53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D3A8022756DA910090B266 /* MemoryMedications.swift */; };
 		53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A8052756DBC50090B266 /* JFLib.Services */; };
+		53E242F5277C981100FC5C72 /* MedTrackerWidgetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */; };
 		53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9123C27527BCE00710D4C /* MedTrackerApp.swift */; };
 		53E9124127527BD000710D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124027527BD000710D4C /* Assets.xcassets */; };
 		53E9124427527BD000710D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124327527BD000710D4C /* Preview Assets.xcassets */; };
@@ -212,6 +213,7 @@
 		53A35FE22778E45000D12C8C /* MultiMedicationSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMedicationSummaryView.swift; sourceTree = "<group>"; };
 		53D3A7FA2756CE4F0090B266 /* MedTrackerBiz */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MedTrackerBiz; path = ../MedTrackerBiz; sourceTree = "<group>"; };
 		53D3A8022756DA910090B266 /* MemoryMedications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryMedications.swift; sourceTree = "<group>"; };
+		53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		53E24F64276AA61500AE0DB9 /* CoreDataSavePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSavePublisher.swift; sourceTree = "<group>"; };
 		53E9123927527BCE00710D4C /* MedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E9123C27527BCE00710D4C /* MedTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerApp.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 		53E9123027527BCE00710D4C = {
 			isa = PBXGroup;
 			children = (
+				53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */,
 				5318604D2764F765006F2B15 /* Shared */,
 				53E9123B27527BCE00710D4C /* MedTracker */,
 				53E9124C27527BD000710D4C /* MedTrackerTests */,
@@ -912,6 +915,7 @@
 				530C5BF2275EAE520089B69F /* CoreDataAdministrations.swift in Sources */,
 				53167540275C20B200CE3753 /* LogMedicationIntentHandler.swift in Sources */,
 				53880C22276D54950088A411 /* CoreDataNotifier.swift in Sources */,
+				53E242F5277C981100FC5C72 /* MedTrackerWidgetCenter.swift in Sources */,
 				5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */,
 				530C5BED275EADBD0089B69F /* Persistence.swift in Sources */,
 				530C5BF1275EAE500089B69F /* CoreDataMedications.swift in Sources */,
@@ -1162,6 +1166,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AppWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q96RZM5NAK;
@@ -1169,7 +1174,7 @@
 				INFOPLIST_FILE = AppWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppWidgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1190,6 +1195,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AppWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q96RZM5NAK;
@@ -1197,7 +1203,7 @@
 				INFOPLIST_FILE = AppWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppWidgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

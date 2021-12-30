@@ -3,21 +3,13 @@ import WidgetKit
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let medications: [DailyMedication]
-
-    func clearAdministrations(date: Date) -> SimpleEntry {
-        var tomorrowMedications = medications
-        for i in 0..<tomorrowMedications.count {
-            tomorrowMedications[i].reset()
-        }
-        return SimpleEntry(date: date, medications: tomorrowMedications)
-    }
 }
 
 struct DailyMedication {
     let medicationName: String
-    private(set) var wasAdministeredToday: Bool
+    let wasAdministeredToday: Bool
 
-    mutating func reset() {
-        wasAdministeredToday = false
+    func notAdministered() -> DailyMedication {
+        .init(medicationName: medicationName, wasAdministeredToday: false)
     }
 }

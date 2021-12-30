@@ -34,20 +34,24 @@ struct Provider: TimelineProvider {
         logger.info("Build Timeline")
 
         Task {
-            var entries: [SimpleEntry] = []
-
             let currentMedications = await medTrackerApp.getTrackedMedications()
-            let currentEntry = SimpleEntry(date: Date(), medications: currentMedications)
-            entries.append(currentEntry)
+            let clearedMedications = currentMedications.map { $0.notAdministered() }
 
-            let today = Date()
-            let midnight = Calendar.current.startOfDay(for: today)
-            let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
-            let entry = currentEntry.clearAdministrations(date: tomorrow)
-            entries.append(entry)
+            let nowEntry = SimpleEntry(date: Date(), medications: currentMedications)
+            let tomorrowEntry = SimpleEntry(date: getTomorrowDate(), medications: clearedMedications)
 
+            // Build Timeline
+            var entries: [SimpleEntry] = []
+            entries.append(nowEntry)
+            entries.append(tomorrowEntry)
             let timeline = Timeline(entries: entries, policy: .never)
+
             completion(timeline)
         }
+    }
+
+    private func getTomorrowDate() -> Date {
+        let midnight = Calendar.current.startOfDay(for: Date.current)
+        return Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
     }
 }

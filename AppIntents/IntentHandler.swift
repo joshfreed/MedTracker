@@ -9,7 +9,7 @@ class IntentHandler: INExtension {
             medications: CoreDataMedications(context: context),
             administrations: CoreDataAdministrations(context: context),
             shortcutDonation: EmptyDonationService(),
-            widgetService: EmptyWidgetService()
+            widgetService: MedTrackerWidgetCenter()
         )
     }()
 
