@@ -528,6 +528,7 @@
 				536CD449277F568600A1FC73 /* DailySummary */,
 				536CD44A277F56AE00A1FC73 /* Service */,
 				53A35FBC2778C7C400D12C8C /* AppWidgets.swift */,
+				53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */,
 				53A35FBE2778C7C400D12C8C /* AppWidgets.intentdefinition */,
 				53A35FBF2778C7C500D12C8C /* Assets.xcassets */,
 				53A35FC12778C7C500D12C8C /* Info.plist */,
@@ -600,7 +601,6 @@
 		53E9123027527BCE00710D4C = {
 			isa = PBXGroup;
 			children = (
-				53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */,
 				5318604D2764F765006F2B15 /* Shared */,
 				53E9123B27527BCE00710D4C /* MedTracker */,
 				53E9124C27527BD000710D4C /* MedTrackerTests */,
