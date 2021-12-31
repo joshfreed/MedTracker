@@ -41,6 +41,7 @@ extension CDMedication {
     func populateFromDomain(_ medication: Medication) {
         id = medication.id.uuid
         name = medication.name
+        administrationHour = Int16(medication.administrationTime)
     }
 }
 
@@ -48,7 +49,8 @@ extension Medication {
     static func fromCoreData(_ entity: CDMedication) throws -> Medication {
         let values: [String: Any] = [
             "id": ["uuid": entity.id!.uuidString],
-            "name": entity.name!
+            "name": entity.name!,
+            "administrationTime": Int(entity.administrationHour)
         ]
         let data = try JSONSerialization.data(withJSONObject: values, options: [])
         let decoder = JSONDecoder()

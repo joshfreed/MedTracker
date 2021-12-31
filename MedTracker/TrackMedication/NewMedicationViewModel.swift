@@ -20,7 +20,7 @@ class NewMedicationViewModel: ObservableObject {
         medicationTracked = false
         errorTrackingMedication = false
 
-        let command = TrackMedicationCommand(name: name)
+        let command = TrackMedicationCommand(name: name, administrationTime: 9)
 
         do {
             try await trackMedication.handle(command)
