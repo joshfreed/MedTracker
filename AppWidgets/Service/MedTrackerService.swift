@@ -2,13 +2,10 @@ import Foundation
 import MedicationApp
 import OSLog
 
-protocol MedTrackerApp {
-    func getTrackedMedications() async -> [DailyMedication]
-}
-
-class DefaultMedTrackerApp: MedTrackerApp {
+/// Translates data from MedTrackerBiz and the widgets app
+class MedTrackerApp: GetDailySummaryQuery {
     private let logger = Logger.widget
-    
+
     private lazy var medicationService: MedicationService = {
         let context = PersistenceController.shared.container.viewContext
 
@@ -20,7 +17,7 @@ class DefaultMedTrackerApp: MedTrackerApp {
         )
     }()
 
-    func getTrackedMedications() async -> [DailyMedication] {
+    func getTrackedMedications() async -> [TrackedMedication] {
         do {
             let response = try await medicationService.handle(GetTrackedMedicationsQuery(date: Date()))
             return response.medications.map {

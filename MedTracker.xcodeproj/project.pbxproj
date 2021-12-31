@@ -50,6 +50,7 @@
 		532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7667275921CC0092AB85 /* CardViewModifier.swift */; };
 		53406578276648C900F116DB /* UserDefaultsCoreDataNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53406577276648C900F116DB /* UserDefaultsCoreDataNotifier.swift */; };
 		53406579276648C900F116DB /* UserDefaultsCoreDataNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53406577276648C900F116DB /* UserDefaultsCoreDataNotifier.swift */; };
+		536CD44C277F56C900A1FC73 /* MedTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CD44B277F56C900A1FC73 /* MedTrackerService.swift */; };
 		536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC6D275E960B007AAD9B /* IntentDonationService.swift */; };
 		536EAC72275E989E007AAD9B /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
 		53880C1D276CEECC0088A411 /* CoreDataSaveListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53880C1C276CEECC0088A411 /* CoreDataSaveListener.swift */; };
@@ -65,10 +66,9 @@
 		53A35FC22778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FBE2778C7C400D12C8C /* AppWidgets.intentdefinition */; };
 		53A35FC32778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FBE2778C7C400D12C8C /* AppWidgets.intentdefinition */; };
 		53A35FC62778C7C500D12C8C /* AppWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53A35FB62778C7C400D12C8C /* AppWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		53A35FCC2778DB6D00D12C8C /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FCA2778DB6900D12C8C /* Provider.swift */; };
-		53A35FCF2778DBE700D12C8C /* AppWidgetsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FCD2778DBE000D12C8C /* AppWidgetsEntryView.swift */; };
-		53A35FD12778DC2300D12C8C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FD02778DC2300D12C8C /* Entry.swift */; };
-		53A35FD32778DDC500D12C8C /* MedTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FD22778DDC500D12C8C /* MedTrackerApp.swift */; };
+		53A35FCC2778DB6D00D12C8C /* DailySummaryTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FCA2778DB6900D12C8C /* DailySummaryTimelineProvider.swift */; };
+		53A35FD12778DC2300D12C8C /* DailySummaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FD02778DC2300D12C8C /* DailySummaryEntry.swift */; };
+		53A35FD32778DDC500D12C8C /* GetDailySummaryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FD22778DDC500D12C8C /* GetDailySummaryQuery.swift */; };
 		53A35FD42778DDE900D12C8C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CE275A9DC200AECAEB /* Persistence.swift */; };
 		53A35FD52778DDF500D12C8C /* CoreDataMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409CC275A978400AECAEB /* CoreDataMedications.swift */; };
 		53A35FD62778DDF800D12C8C /* CoreDataAdministrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F409D0275AAC2C00AECAEB /* CoreDataAdministrations.swift */; };
@@ -77,8 +77,6 @@
 		53A35FDA2778DE3400D12C8C /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 53A35FD92778DE3400D12C8C /* MedTrackerBiz */; };
 		53A35FDB2778E02200D12C8C /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53A35FDF2778E2F700D12C8C /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */; };
-		53A35FE12778E44500D12C8C /* SingleMedicationSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FE02778E44500D12C8C /* SingleMedicationSummaryView.swift */; };
-		53A35FE32778E45000D12C8C /* MultiMedicationSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FE22778E45000D12C8C /* MultiMedicationSummaryView.swift */; };
 		53D3A7FD2756CEF80090B266 /* MedTrackerBiz in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A7FC2756CEF80090B266 /* MedTrackerBiz */; };
 		53D3A8032756DA910090B266 /* MemoryMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D3A8022756DA910090B266 /* MemoryMedications.swift */; };
 		53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A8052756DBC50090B266 /* JFLib.Services */; };
@@ -191,6 +189,7 @@
 		532E7663275920190092AB85 /* DailyMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMedicationView.swift; sourceTree = "<group>"; };
 		532E7667275921CC0092AB85 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		53406577276648C900F116DB /* UserDefaultsCoreDataNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsCoreDataNotifier.swift; sourceTree = "<group>"; };
+		536CD44B277F56C900A1FC73 /* MedTrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerService.swift; sourceTree = "<group>"; };
 		536EAC6D275E960B007AAD9B /* IntentDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentDonationService.swift; sourceTree = "<group>"; };
 		536EAC71275E989E007AAD9B /* EmptyDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDonationService.swift; sourceTree = "<group>"; };
 		536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MedTrackerRelease.entitlements; sourceTree = "<group>"; };
@@ -204,13 +203,10 @@
 		53A35FBE2778C7C400D12C8C /* AppWidgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = AppWidgets.intentdefinition; sourceTree = "<group>"; };
 		53A35FBF2778C7C500D12C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53A35FC12778C7C500D12C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53A35FCA2778DB6900D12C8C /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		53A35FCD2778DBE000D12C8C /* AppWidgetsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetsEntryView.swift; sourceTree = "<group>"; };
-		53A35FD02778DC2300D12C8C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		53A35FD22778DDC500D12C8C /* MedTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerApp.swift; sourceTree = "<group>"; };
+		53A35FCA2778DB6900D12C8C /* DailySummaryTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryTimelineProvider.swift; sourceTree = "<group>"; };
+		53A35FD02778DC2300D12C8C /* DailySummaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryEntry.swift; sourceTree = "<group>"; };
+		53A35FD22778DDC500D12C8C /* GetDailySummaryQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDailySummaryQuery.swift; sourceTree = "<group>"; };
 		53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
-		53A35FE02778E44500D12C8C /* SingleMedicationSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMedicationSummaryView.swift; sourceTree = "<group>"; };
-		53A35FE22778E45000D12C8C /* MultiMedicationSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiMedicationSummaryView.swift; sourceTree = "<group>"; };
 		53D3A7FA2756CE4F0090B266 /* MedTrackerBiz */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MedTrackerBiz; path = ../MedTrackerBiz; sourceTree = "<group>"; };
 		53D3A8022756DA910090B266 /* MemoryMedications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryMedications.swift; sourceTree = "<group>"; };
 		53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppWidgetsExtension.entitlements; sourceTree = "<group>"; };
@@ -463,6 +459,40 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		536CD449277F568600A1FC73 /* DailySummary */ = {
+			isa = PBXGroup;
+			children = (
+				53A35FCA2778DB6900D12C8C /* DailySummaryTimelineProvider.swift */,
+				53A35FD02778DC2300D12C8C /* DailySummaryEntry.swift */,
+				53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */,
+			);
+			path = DailySummary;
+			sourceTree = "<group>";
+		};
+		536CD44A277F56AE00A1FC73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				536CD44B277F56C900A1FC73 /* MedTrackerService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		536CD44D277F576700A1FC73 /* Port */ = {
+			isa = PBXGroup;
+			children = (
+				536CD44E277F576C00A1FC73 /* Out */,
+			);
+			path = Port;
+			sourceTree = "<group>";
+		};
+		536CD44E277F576C00A1FC73 /* Out */ = {
+			isa = PBXGroup;
+			children = (
+				53A35FD22778DDC500D12C8C /* GetDailySummaryQuery.swift */,
+			);
+			path = Out;
+			sourceTree = "<group>";
+		};
 		536EAC6F275E968F007AAD9B /* Shortcuts */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,35 +524,15 @@
 		53A35FBB2778C7C400D12C8C /* AppWidgets */ = {
 			isa = PBXGroup;
 			children = (
-				53A35FDD2778E25100D12C8C /* Models */,
-				53A35FDC2778E24900D12C8C /* Views */,
+				536CD44D277F576700A1FC73 /* Port */,
+				536CD449277F568600A1FC73 /* DailySummary */,
+				536CD44A277F56AE00A1FC73 /* Service */,
 				53A35FBC2778C7C400D12C8C /* AppWidgets.swift */,
-				53A35FCA2778DB6900D12C8C /* Provider.swift */,
 				53A35FBE2778C7C400D12C8C /* AppWidgets.intentdefinition */,
 				53A35FBF2778C7C500D12C8C /* Assets.xcassets */,
 				53A35FC12778C7C500D12C8C /* Info.plist */,
 			);
 			path = AppWidgets;
-			sourceTree = "<group>";
-		};
-		53A35FDC2778E24900D12C8C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				53A35FCD2778DBE000D12C8C /* AppWidgetsEntryView.swift */,
-				53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */,
-				53A35FE02778E44500D12C8C /* SingleMedicationSummaryView.swift */,
-				53A35FE22778E45000D12C8C /* MultiMedicationSummaryView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		53A35FDD2778E25100D12C8C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				53A35FD02778DC2300D12C8C /* Entry.swift */,
-				53A35FD22778DDC500D12C8C /* MedTrackerApp.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		53D3A7F92756CE4F0090B266 /* Packages */ = {
@@ -934,17 +944,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A35FD12778DC2300D12C8C /* Entry.swift in Sources */,
+				53A35FD12778DC2300D12C8C /* DailySummaryEntry.swift in Sources */,
 				53A35FC22778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */,
 				53A35FDF2778E2F700D12C8C /* DailySummaryView.swift in Sources */,
-				53A35FCF2778DBE700D12C8C /* AppWidgetsEntryView.swift in Sources */,
 				53A35FD42778DDE900D12C8C /* Persistence.swift in Sources */,
-				53A35FD32778DDC500D12C8C /* MedTrackerApp.swift in Sources */,
+				536CD44C277F56C900A1FC73 /* MedTrackerService.swift in Sources */,
+				53A35FD32778DDC500D12C8C /* GetDailySummaryQuery.swift in Sources */,
 				53A35FD72778DDFF00D12C8C /* EmptyDonationService.swift in Sources */,
 				53A35FD62778DDF800D12C8C /* CoreDataAdministrations.swift in Sources */,
-				53A35FE12778E44500D12C8C /* SingleMedicationSummaryView.swift in Sources */,
-				53A35FCC2778DB6D00D12C8C /* Provider.swift in Sources */,
-				53A35FE32778E45000D12C8C /* MultiMedicationSummaryView.swift in Sources */,
+				53A35FCC2778DB6D00D12C8C /* DailySummaryTimelineProvider.swift in Sources */,
 				53A35FD82778DE1700D12C8C /* MedTracker.xcdatamodeld in Sources */,
 				53A35FDB2778E02200D12C8C /* Logger+extensions.swift in Sources */,
 				53A35FBD2778C7C400D12C8C /* AppWidgets.swift in Sources */,

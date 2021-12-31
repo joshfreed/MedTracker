@@ -1,15 +1,15 @@
 import WidgetKit
 
-struct SimpleEntry: TimelineEntry {
+struct DailySummaryEntry: TimelineEntry {
     let date: Date
-    let medications: [DailyMedication]
+    let medications: [TrackedMedication]
 }
 
-struct DailyMedication {
+struct TrackedMedication {
     let medicationName: String
     let wasAdministeredToday: Bool
 
-    func notAdministered() -> DailyMedication {
+    func notAdministered() -> TrackedMedication {
         .init(medicationName: medicationName, wasAdministeredToday: false)
     }
 }

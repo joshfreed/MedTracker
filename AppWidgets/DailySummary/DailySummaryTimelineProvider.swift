@@ -1,22 +1,22 @@
 import WidgetKit
 import OSLog
 
-struct Provider: TimelineProvider {
-    private let medTrackerApp: MedTrackerApp
+struct DailySummaryTimelineProvider: TimelineProvider {
+    private let medTrackerApp: GetDailySummaryQuery
     private let logger = Logger.widget
 
-    init(medTrackerApp: MedTrackerApp) {
+    init(medTrackerApp: GetDailySummaryQuery) {
         self.medTrackerApp = medTrackerApp
     }
 
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), medications: [])
+    func placeholder(in context: Context) -> DailySummaryEntry {
+        DailySummaryEntry(date: Date(), medications: [])
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (DailySummaryEntry) -> ()) {
         if context.isPreview {
             logger.info("Get Preview Snapshot")
-            let entry = SimpleEntry(date: Date(), medications: [
+            let entry = DailySummaryEntry(date: Date(), medications: [
                 .init(medicationName: "Happy Pills", wasAdministeredToday: false)
             ])
             completion(entry)
@@ -24,24 +24,24 @@ struct Provider: TimelineProvider {
             logger.info("Get Live Snapshot")
             Task {
                 let currentMedications = await medTrackerApp.getTrackedMedications()
-                let entry = SimpleEntry(date: Date(), medications: currentMedications)
+                let entry = DailySummaryEntry(date: Date(), medications: currentMedications)
                 completion(entry)
             }
         }
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<DailySummaryEntry>) -> ()) {
         logger.info("Build Timeline")
 
         Task {
             let currentMedications = await medTrackerApp.getTrackedMedications()
             let clearedMedications = currentMedications.map { $0.notAdministered() }
 
-            let nowEntry = SimpleEntry(date: Date(), medications: currentMedications)
-            let tomorrowEntry = SimpleEntry(date: getTomorrowDate(), medications: clearedMedications)
+            let nowEntry = DailySummaryEntry(date: Date(), medications: currentMedications)
+            let tomorrowEntry = DailySummaryEntry(date: getTomorrowDate(), medications: clearedMedications)
 
             // Build Timeline
-            var entries: [SimpleEntry] = []
+            var entries: [DailySummaryEntry] = []
             entries.append(nowEntry)
             entries.append(tomorrowEntry)
             let timeline = Timeline(entries: entries, policy: .never)

@@ -1,8 +1,8 @@
 import SwiftUI
 import WidgetKit
 
-struct MultiMedicationSummaryView: View {
-    var entry: SimpleEntry
+struct DailySummaryView: View {
+    var entry: DailySummaryEntry
 
     var medicationCount: Int { entry.medications.count }
 
@@ -23,33 +23,33 @@ struct MultiMedicationSummaryView: View {
     }
 }
 
-struct MultiMedicationSummaryView_Previews: PreviewProvider {
-    static let noneTaken: [DailyMedication] = [
+struct DailySummaryView_Previews: PreviewProvider {
+    static let noneTaken: [TrackedMedication] = [
         .init(medicationName: "", wasAdministeredToday: false),
         .init(medicationName: "", wasAdministeredToday: false),
     ]
 
-    static let someTaken: [DailyMedication] = [
+    static let someTaken: [TrackedMedication] = [
         .init(medicationName: "", wasAdministeredToday: false),
         .init(medicationName: "", wasAdministeredToday: true),
     ]
 
-    static let allTaken: [DailyMedication] = [
+    static let allTaken: [TrackedMedication] = [
         .init(medicationName: "", wasAdministeredToday: true),
         .init(medicationName: "", wasAdministeredToday: true),
     ]
 
     static var previews: some View {
-        MultiMedicationSummaryView(entry: .init(date: Date(), medications: []))
+        DailySummaryView(entry: .init(date: Date(), medications: []))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
 
-        MultiMedicationSummaryView(entry: .init(date: Date(), medications: noneTaken))
+        DailySummaryView(entry: .init(date: Date(), medications: noneTaken))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
 
-        MultiMedicationSummaryView(entry: .init(date: Date(), medications: someTaken))
+        DailySummaryView(entry: .init(date: Date(), medications: someTaken))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
 
-        MultiMedicationSummaryView(entry: .init(date: Date(), medications: allTaken))
+        DailySummaryView(entry: .init(date: Date(), medications: allTaken))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
