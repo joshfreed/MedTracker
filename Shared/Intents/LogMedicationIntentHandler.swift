@@ -5,7 +5,7 @@ import MedicationApp
 class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
     private let recordAdministration: RecordAdministrationUseCase
     private let getTrackedMedications: GetTrackedMedicationsUseCase
-    private let logger = Logger.main
+    private let logger = Logger.intent
 
     init(recordAdministration: RecordAdministrationUseCase, getTrackedMedications: GetTrackedMedicationsUseCase) {
         self.recordAdministration = recordAdministration
