@@ -26,7 +26,8 @@ class MedTrackerUITests: XCTestCase {
         let medications: [[AnyHashable: Any]] = [
             [
                 "id": ["uuid": UUID().uuidString],
-                "name": "Crazy Pills"
+                "name": "Crazy Pills",
+                "administrationTime": 9
             ]
         ]
         let app = launch(medications: medications)
@@ -45,7 +46,8 @@ class MedTrackerUITests: XCTestCase {
         let medications: [[AnyHashable: Any]] = [
             [
                 "id": medicationId,
-                "name": "Crazy Pills"
+                "name": "Crazy Pills",
+                "administrationTime": 9
             ]
         ]
         let administrations: [[AnyHashable: Any]] = [

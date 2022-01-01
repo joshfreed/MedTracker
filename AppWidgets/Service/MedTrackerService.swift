@@ -1,6 +1,7 @@
 import Foundation
 import MedicationApp
 import OSLog
+import CoreDataKit
 
 /// Translates data from MedTrackerBiz and the widgets app
 class MedTrackerApp: GetDailySummaryQuery {

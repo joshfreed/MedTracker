@@ -1,5 +1,6 @@
 import Intents
 import MedicationApp
+import CoreDataKit
 
 class IntentHandler: INExtension {
     private lazy var medicationService: MedicationService = {

@@ -4,7 +4,7 @@ import Combine
 import Dip
 import JFLib_Services
 import MedicationApp
-import CoreData
+import CoreDataKit
 
 @main
 struct MedTrackerApp: App {
@@ -12,6 +12,9 @@ struct MedTrackerApp: App {
     private let coreDataSaveListener = CoreDataSaveListener()
 
     init() {
+        let storeUrl = URL.storeURL(for: "group.medtracker.core.data", databaseName: "MedTracker").absoluteString
+        Logger.main.debug("CORE DATA: \(storeUrl, privacy: .public)")
+
         env = Environment.autodetect
 
         let serviceContainer = Dip.DependencyContainer()
