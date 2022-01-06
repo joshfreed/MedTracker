@@ -1,29 +1,26 @@
 import Foundation
 import OSLog
 import JFLib_Services
-import MedicationApp
 
 class NewMedicationViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var medicationTracked = false
     @Published var errorTrackingMedication = false
 
-    @Injected private var trackMedication: TrackMedicationUseCase
+    @Injected private var backEnd: MedTrackerApplication
 
     init() {}
 
-    init(trackMedication: TrackMedicationUseCase) {
-        self.trackMedication = trackMedication
+    init(backEnd: MedTrackerApplication) {
+        self.backEnd = backEnd
     }
 
     func submit() async {
         medicationTracked = false
         errorTrackingMedication = false
 
-        let command = TrackMedicationCommand(name: name, administrationTime: 9)
-
         do {
-            try await trackMedication.handle(command)
+            try await backEnd.trackMedication(name: name, administrationTime: 9)
             medicationTracked = true
         } catch {
             Logger.trackMedication.error(error)
@@ -37,10 +34,6 @@ class NewMedicationViewModel: ObservableObject {
 
 extension NewMedicationViewModel {
     static func preview() -> NewMedicationViewModel {
-        class UseCase: TrackMedicationUseCase {
-            func handle(_ command: TrackMedicationCommand) async throws {}
-        }
-
-        return NewMedicationViewModel(trackMedication: UseCase())
+        NewMedicationViewModel(backEnd: .preview())
     }
 }

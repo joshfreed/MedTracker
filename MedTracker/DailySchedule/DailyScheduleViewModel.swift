@@ -2,7 +2,6 @@ import Foundation
 import OSLog
 import Combine
 import JFLib_Services
-import JFLib_Mediator
 import MedicationApp
 
 class DailyScheduleViewModel: ObservableObject {
@@ -10,9 +9,7 @@ class DailyScheduleViewModel: ObservableObject {
     @Published var medications: [DailySchedule.Medication] = []
     @Published var lastFetchedAt: String = ""
 
-    @Injected private var getTrackedMedications: GetTrackedMedicationsContinuousQuery
-    @Injected private var recordAdministration: RecordAdministrationUseCase
-    @Injected private var removeAdministration: RemoveAdministrationUseCase
+    @Injected private var backEnd: MedTrackerApplication
 
     private var cancellable: AnyCancellable?
 
@@ -20,9 +17,9 @@ class DailyScheduleViewModel: ObservableObject {
         Logger.dailySchedule.debug("init")
     }
 
-    init(getTrackedMedications: GetTrackedMedicationsContinuousQuery) {
+    init(backEnd: MedTrackerApplication) {
         Logger.dailySchedule.debug("init")
-        self.getTrackedMedications = getTrackedMedications
+        self.backEnd = backEnd
     }
 
     deinit {
@@ -38,8 +35,8 @@ class DailyScheduleViewModel: ObservableObject {
 
         Logger.dailySchedule.debug("loading meds for \(date, privacy: .public)")
 
-        cancellable = getTrackedMedications
-            .subscribe(GetTrackedMedicationsQuery(date: date))
+        cancellable = backEnd
+            .getTrackedMedications(date: date)
             .receive(on: RunLoop.main)
             .print("GetTrackedMedicationsQuery", to: self)
             .logError(to: .dailySchedule, andReplaceWith: GetTrackedMedicationsResponse(date: date, medications: []))
@@ -72,7 +69,7 @@ extension DailyScheduleViewModel {
 
     private func recordAdministration(medicationId: String) async {
         do {
-            try await recordAdministration.handle(RecordAdministrationCommand(medicationId: medicationId))
+            try await backEnd.recordAdministration(medicationId: medicationId)
         } catch RecordAdministrationError.administrationAlreadyRecorded {
             Logger.dailySchedule.warning("Tried to record an administration for a medication that was already logged today.")
         } catch {
@@ -83,7 +80,7 @@ extension DailyScheduleViewModel {
 
     private func removeAdministration(medicationId: String) async {
         do {
-            try await removeAdministration.handle(RemoveAdministrationCommand(medicationId: medicationId))
+            try await backEnd.removeAdministration(medicationId: medicationId)
         } catch {
             Logger.dailySchedule.error(error)
             fatalError("\(error)")
@@ -146,18 +143,6 @@ extension DailyScheduleViewModel {
 
 extension DailyScheduleViewModel {
     static func preview() -> DailyScheduleViewModel {
-        class UseCase: GetTrackedMedicationsContinuousQuery {
-            func subscribe(_ query: GetTrackedMedicationsQuery) -> AnyPublisher<GetTrackedMedicationsResponse, Error> {
-                let medications: [GetTrackedMedicationsResponse.Medication] = [
-                    .init(id: "A", name: "Lexapro", wasAdministered: false),
-                    .init(id: "B", name: "Allegra", wasAdministered: true),
-                ]
-                return Just(.init(date: Date(), medications: medications))
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
-            }
-        }
-
-        return DailyScheduleViewModel(getTrackedMedications: UseCase())
+        DailyScheduleViewModel(backEnd: .preview())
     }
 }
