@@ -9,7 +9,7 @@ class DailyScheduleViewModel: ObservableObject {
     @Published var medications: [DailySchedule.Medication] = []
     @Published var lastFetchedAt: String = ""
 
-    @Injected private var backEnd: MedTrackerApplication
+    @Injected private var application: MedTrackerApplication
 
     private var cancellable: AnyCancellable?
 
@@ -17,9 +17,9 @@ class DailyScheduleViewModel: ObservableObject {
         Logger.dailySchedule.debug("init")
     }
 
-    init(backEnd: MedTrackerApplication) {
+    init(application: MedTrackerApplication) {
         Logger.dailySchedule.debug("init")
-        self.backEnd = backEnd
+        self.application = application
     }
 
     deinit {
@@ -35,7 +35,7 @@ class DailyScheduleViewModel: ObservableObject {
 
         Logger.dailySchedule.debug("loading meds for \(date, privacy: .public)")
 
-        cancellable = backEnd
+        cancellable = application
             .getTrackedMedications(date: date)
             .receive(on: RunLoop.main)
             .print("GetTrackedMedicationsQuery", to: self)
@@ -69,7 +69,7 @@ extension DailyScheduleViewModel {
 
     private func recordAdministration(medicationId: String) async {
         do {
-            try await backEnd.recordAdministration(medicationId: medicationId)
+            try await application.recordAdministration(medicationId: medicationId)
         } catch RecordAdministrationError.administrationAlreadyRecorded {
             Logger.dailySchedule.warning("Tried to record an administration for a medication that was already logged today.")
         } catch {
@@ -80,7 +80,7 @@ extension DailyScheduleViewModel {
 
     private func removeAdministration(medicationId: String) async {
         do {
-            try await backEnd.removeAdministration(medicationId: medicationId)
+            try await application.removeAdministration(medicationId: medicationId)
         } catch {
             Logger.dailySchedule.error(error)
             fatalError("\(error)")
@@ -143,6 +143,6 @@ extension DailyScheduleViewModel {
 
 extension DailyScheduleViewModel {
     static func preview() -> DailyScheduleViewModel {
-        DailyScheduleViewModel(backEnd: .preview())
+        DailyScheduleViewModel(application: PreviewApplication())
     }
 }

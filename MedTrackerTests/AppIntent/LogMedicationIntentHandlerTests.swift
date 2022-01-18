@@ -5,14 +5,10 @@ import Intents
 
 class LogMedicationIntentHandlerTests: XCTestCase {
     var sut: LogMedicationIntentHandler!
-    let mockRecordAdministration = MockRecordAdministrationUseCase()
-    let mockGetTrackedMedications = MockGetTrackedMedicationsUseCase()
+    let mockApplication = MockAppIntentsApplication()
 
     override func setUpWithError() throws {
-        sut = LogMedicationIntentHandler(
-            recordAdministration: mockRecordAdministration,
-            getTrackedMedications: mockGetTrackedMedications
-        )
+        sut = LogMedicationIntentHandler(application: mockApplication)
     }
 
     override func tearDownWithError() throws {
@@ -25,13 +21,12 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = "Advil"
-        let expectedCommand = RecordAdministrationByNameCommand(medicationName: "Advil")
 
         // When
         let response = await sut.handle(intent: intent)
 
         // Then
-        mockRecordAdministration.verify_recordAdministrationByName_wasHandled(with: expectedCommand)
+        mockApplication.verify_recordAdministrationByName_wasHandled(with: "Advil")
         XCTAssertEqual(.success, response.code)
         XCTAssertEqual("Advil", response.medicationName)
         XCTAssertNil(response.userActivity)
@@ -45,7 +40,7 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         let response = await sut.handle(intent: intent)
 
         // Then
-        mockRecordAdministration.verify_recordAdministrationByName_wasNotCalled()
+        mockApplication.verify_recordAdministrationByName_wasNotCalled()
         XCTAssertEqual(.failure, response.code)
         XCTAssertNil(response.medicationName)
         XCTAssertNil(response.userActivity)
@@ -55,14 +50,13 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = "Advil"
-        let expectedCommand = RecordAdministrationByNameCommand(medicationName: "Advil")
-        mockRecordAdministration.configure_recordAdministrationByName_willThrow(RecordAdministrationError.invalidMedicationId)
+        mockApplication.configure_recordAdministrationByName_willThrow(RecordAdministrationError.invalidMedicationId)
 
         // When
         let response = await sut.handle(intent: intent)
 
         // Then
-        mockRecordAdministration.verify_recordAdministrationByName_wasHandled(with: expectedCommand)
+        mockApplication.verify_recordAdministrationByName_wasHandled(with: "Advil")
         XCTAssertEqual(.failure, response.code)
         XCTAssertEqual("Advil", response.medicationName)
         XCTAssertNil(response.userActivity)
@@ -72,14 +66,13 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = "Advil"
-        let expectedCommand = RecordAdministrationByNameCommand(medicationName: "Advil")
-        mockRecordAdministration.configure_recordAdministrationByName_willThrow(RecordAdministrationError.medicationNotFound)
+        mockApplication.configure_recordAdministrationByName_willThrow(RecordAdministrationError.medicationNotFound)
 
         // When
         let response = await sut.handle(intent: intent)
 
         // Then
-        mockRecordAdministration.verify_recordAdministrationByName_wasHandled(with: expectedCommand)
+        mockApplication.verify_recordAdministrationByName_wasHandled(with: "Advil")
         XCTAssertEqual(.notFound, response.code)
         XCTAssertEqual("Advil", response.medicationName)
         XCTAssertNil(response.userActivity)
@@ -89,14 +82,13 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = "Advil"
-        let expectedCommand = RecordAdministrationByNameCommand(medicationName: "Advil")
-        mockRecordAdministration.configure_recordAdministrationByName_willThrow(RecordAdministrationError.administrationAlreadyRecorded)
+        mockApplication.configure_recordAdministrationByName_willThrow(RecordAdministrationError.administrationAlreadyRecorded)
 
         // When
         let response = await sut.handle(intent: intent)
 
         // Then
-        mockRecordAdministration.verify_recordAdministrationByName_wasHandled(with: expectedCommand)
+        mockApplication.verify_recordAdministrationByName_wasHandled(with: "Advil")
         XCTAssertEqual(.alreadyLogged, response.code)
         XCTAssertEqual("Advil", response.medicationName)
         XCTAssertNil(response.userActivity)
@@ -153,7 +145,7 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = nil
-        mockGetTrackedMedications.configure_toReturn(response: .init(date: Date.current, medications: [.init(id: "AAA", name: "Tylenol")]))
+        mockApplication.configure_toReturn(response: .init(date: Date.current, medications: [.init(id: "AAA", name: "Tylenol")]))
 
         // When
         let result = await sut.resolveMedication(for: intent)
@@ -169,7 +161,7 @@ class LogMedicationIntentHandlerTests: XCTestCase {
         // Given
         let intent = LogMedicationIntent()
         intent.medication = nil
-        mockGetTrackedMedications.configure_toReturn(response: .init(date: Date.current, medications: [
+        mockApplication.configure_toReturn(response: .init(date: Date.current, medications: [
             .init(id: "AAA", name: "Tylenol"),
             .init(id: "BBB", name: "Advil")
         ]))

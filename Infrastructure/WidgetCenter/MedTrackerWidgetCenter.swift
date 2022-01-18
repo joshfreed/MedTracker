@@ -1,5 +1,4 @@
 import Foundation
-import MedicationApp
 import WidgetKit
 
 class MedTrackerWidgetCenter: WidgetService {

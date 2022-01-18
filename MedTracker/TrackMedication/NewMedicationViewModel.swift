@@ -7,12 +7,12 @@ class NewMedicationViewModel: ObservableObject {
     @Published var medicationTracked = false
     @Published var errorTrackingMedication = false
 
-    @Injected private var backEnd: MedTrackerApplication
+    @Injected private var application: MedTrackerApplication
 
     init() {}
 
-    init(backEnd: MedTrackerApplication) {
-        self.backEnd = backEnd
+    init(application: MedTrackerApplication) {
+        self.application = application
     }
 
     func submit() async {
@@ -20,7 +20,7 @@ class NewMedicationViewModel: ObservableObject {
         errorTrackingMedication = false
 
         do {
-            try await backEnd.trackMedication(name: name, administrationTime: 9)
+            try await application.trackMedication(name: name, administrationTime: 9)
             medicationTracked = true
         } catch {
             Logger.trackMedication.error(error)
@@ -34,6 +34,6 @@ class NewMedicationViewModel: ObservableObject {
 
 extension NewMedicationViewModel {
     static func preview() -> NewMedicationViewModel {
-        NewMedicationViewModel(backEnd: .preview())
+        NewMedicationViewModel(application: PreviewApplication())
     }
 }

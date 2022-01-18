@@ -2,10 +2,10 @@ import WidgetKit
 import OSLog
 
 struct DailySummaryTimelineProvider: TimelineProvider {
-    private let medTrackerApp: GetDailySummaryQuery
+    private let medTrackerApp: WidgetApplication
     private let logger = Logger.widget
 
-    init(medTrackerApp: GetDailySummaryQuery) {
+    init(medTrackerApp: WidgetApplication) {
         self.medTrackerApp = medTrackerApp
     }
 

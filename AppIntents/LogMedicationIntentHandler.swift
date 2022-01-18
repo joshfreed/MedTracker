@@ -3,13 +3,11 @@ import OSLog
 import MedicationApp
 
 class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
-    private let recordAdministration: RecordAdministrationUseCase
-    private let getTrackedMedications: GetTrackedMedicationsUseCase
+    private let application: AppIntentsApplication
     private let logger = Logger.intent
 
-    init(recordAdministration: RecordAdministrationUseCase, getTrackedMedications: GetTrackedMedicationsUseCase) {
-        self.recordAdministration = recordAdministration
-        self.getTrackedMedications = getTrackedMedications
+    init(application: AppIntentsApplication) {
+        self.application = application
     }
 
     func handle(intent: LogMedicationIntent) async -> LogMedicationIntentResponse {
@@ -46,8 +44,7 @@ class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
     }
 
     private func logMedication(named medicationName: String) async throws {
-        let command = RecordAdministrationByNameCommand(medicationName: medicationName)
-        try await recordAdministration.handle(command)
+        try await application.recordAdministration(medicationName: medicationName)
     }
 
     func resolveMedication(for intent: LogMedicationIntent) async -> INStringResolutionResult {
@@ -56,7 +53,7 @@ class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
         }
 
         do {
-            let response = try await getTrackedMedications.handle(GetTrackedMedicationsQuery(date: Date.current))
+            let response = try await application.getTrackedMedications(date: Date.current)
             if response.medications.count == 1 {
                 let medicationName = response.medications[0].name
                 return .success(with: medicationName)
