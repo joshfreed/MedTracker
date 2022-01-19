@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import MedTrackerBackEnd
-import MedicationApp
+import MTBackEndCore
+import MedicationContext
 
 /// Application facade for use by the AppIntents target
 protocol AppIntentsApplication {

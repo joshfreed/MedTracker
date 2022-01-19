@@ -1,7 +1,7 @@
 import Foundation
 import Combine
-import MedTrackerBackEnd
-import MedicationApp
+import MTBackEndCore
+import MedicationContext
 
 /// Application facade for use in iOS, ipadOS, or macOS targets
 protocol MedTrackerApplication {

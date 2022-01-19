@@ -1,7 +1,7 @@
 import XCTest
 import Intents
 @testable import MedTracker
-@testable import MedicationApp
+@testable import MedicationContext
 
 class LogMedicationIntentHandlerTests: XCTestCase {
     var sut: LogMedicationIntentHandler!

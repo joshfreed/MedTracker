@@ -2,7 +2,7 @@ import Foundation
 import OSLog
 import Combine
 import JFLib_Services
-import MedicationApp
+import MedicationContext
 
 class DailyScheduleViewModel: ObservableObject {
     @Published private(set) var date: String = ""

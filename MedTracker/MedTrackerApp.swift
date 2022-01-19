@@ -2,8 +2,8 @@ import SwiftUI
 import OSLog
 import Dip
 import JFLib_Services
-import Common
-import DefaultBackEnd
+import MTCommon
+import MTDefaultBackEnd
 
 @main
 struct MedTrackerApp: App {

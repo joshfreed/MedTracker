@@ -2,8 +2,8 @@ import Foundation
 import Combine
 import Dip
 import JFLib_Services
-import Common
-import MedTrackerBackEnd
+import MTCommon
+import MTBackEndCore
 
 class ShortcutsModule {
     private var cancellables = Set<AnyCancellable>()

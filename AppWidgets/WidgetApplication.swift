@@ -1,6 +1,6 @@
 import Foundation
 import OSLog
-import MedTrackerBackEnd
+import MTBackEndCore
 
 protocol WidgetApplication {
     /// Returns all the actively tracked medications and whether each was administered today

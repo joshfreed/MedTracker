@@ -2,8 +2,8 @@ import Foundation
 import Dip
 import Combine
 import JFLib_Services
-import Common
-import MedTrackerBackEnd
+import MTCommon
+import MTBackEndCore
 
 class WidgetCenterModule {
     private var cancellables = Set<AnyCancellable>()

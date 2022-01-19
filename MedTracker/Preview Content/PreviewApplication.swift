@@ -1,6 +1,6 @@
 import Foundation
 import Combine
-import MedicationApp
+import MedicationContext
 
 class PreviewApplication: MedTrackerApplication {
     func trackMedication(name: String, administrationTime: Int) async throws {}

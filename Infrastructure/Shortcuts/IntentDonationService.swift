@@ -1,7 +1,7 @@
 import Foundation
 import Intents
 import JFLib_DomainEvents
-import MedicationApp
+import MedicationContext
 
 class IntentDonationService: ShortcutDonationService {
     func donateInteraction<T>(domainEvent: T) where T : DomainEvent {

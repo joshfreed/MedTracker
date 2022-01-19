@@ -2,8 +2,8 @@ import WidgetKit
 import SwiftUI
 import Dip
 import JFLib_Services
-import Common
-import DefaultBackEnd
+import MTCommon
+import MTDefaultBackEnd
 
 @main
 struct AppWidgets: Widget {

@@ -36,6 +36,9 @@
 		532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7663275920190092AB85 /* DailyMedicationView.swift */; };
 		532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E7667275921CC0092AB85 /* CardViewModifier.swift */; };
 		53554B1B277F7F9C00A7C942 /* CoreDataSaveListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53554B1A277F7F9C00A7C942 /* CoreDataSaveListener.swift */; };
+		535CFE9C27979B3000E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9B27979B3000E83052 /* MedTrackerDefaultBackEnd */; };
+		535CFE9E27979B3900E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */; };
+		535CFEA027979B4000E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9F27979B4000E83052 /* MedTrackerDefaultBackEnd */; };
 		5365757627820E5500D3AEF4 /* PreviewApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365757527820E5500D3AEF4 /* PreviewApplication.swift */; };
 		536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC6D275E960B007AAD9B /* IntentDonationService.swift */; };
 		536EAC72275E989E007AAD9B /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
@@ -53,9 +56,6 @@
 		53A35FD72778DDFF00D12C8C /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
 		53A35FDB2778E02200D12C8C /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53A35FDF2778E2F700D12C8C /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */; };
-		53B329EA2796442900E9D889 /* DefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 53B329E92796442900E9D889 /* DefaultBackEnd */; };
-		53B329EC2796443300E9D889 /* DefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 53B329EB2796443300E9D889 /* DefaultBackEnd */; };
-		53B329EE2796443800E9D889 /* DefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 53B329ED2796443800E9D889 /* DefaultBackEnd */; };
 		53BB30882795C51C00DD7255 /* MedTrackerApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB30872795C51C00DD7255 /* MedTrackerApplication.swift */; };
 		53BB308D27962B1200DD7255 /* AppIntentsApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAE32792302D0023C067 /* AppIntentsApplication.swift */; };
 		53BB308E27962B1400DD7255 /* LogMedicationIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */; };
@@ -213,7 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B329EC2796443300E9D889 /* DefaultBackEnd in Frameworks */,
+				535CFE9E27979B3900E83052 /* MedTrackerDefaultBackEnd in Frameworks */,
 				53167521275C202500CE3753 /* Intents.framework in Frameworks */,
 				53D4CAF8279470160023C067 /* JFLib.Services in Frameworks */,
 			);
@@ -225,8 +225,8 @@
 			files = (
 				53A35FBA2778C7C400D12C8C /* SwiftUI.framework in Frameworks */,
 				53A35FB82778C7C400D12C8C /* WidgetKit.framework in Frameworks */,
-				53B329EE2796443800E9D889 /* DefaultBackEnd in Frameworks */,
 				53BB309D2796325100DD7255 /* JFLib.Services in Frameworks */,
+				535CFEA027979B4000E83052 /* MedTrackerDefaultBackEnd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +234,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535CFE9C27979B3000E83052 /* MedTrackerDefaultBackEnd in Frameworks */,
 				53F409C9275A6F3600AECAEB /* Dip in Frameworks */,
-				53B329EA2796442900E9D889 /* DefaultBackEnd in Frameworks */,
 				53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,7 +591,7 @@
 			name = AppIntents;
 			packageProductDependencies = (
 				53D4CAF7279470160023C067 /* JFLib.Services */,
-				53B329EB2796443300E9D889 /* DefaultBackEnd */,
+				535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */,
 			);
 			productName = AppIntents;
 			productReference = 53167520275C202500CE3753 /* AppIntents.appex */;
@@ -612,7 +612,7 @@
 			name = AppWidgetsExtension;
 			packageProductDependencies = (
 				53BB309C2796325100DD7255 /* JFLib.Services */,
-				53B329ED2796443800E9D889 /* DefaultBackEnd */,
+				535CFE9F27979B4000E83052 /* MedTrackerDefaultBackEnd */,
 			);
 			productName = AppWidgetsExtension;
 			productReference = 53A35FB62778C7C400D12C8C /* AppWidgetsExtension.appex */;
@@ -637,7 +637,7 @@
 			packageProductDependencies = (
 				53D3A8052756DBC50090B266 /* JFLib.Services */,
 				53F409C8275A6F3600AECAEB /* Dip */,
-				53B329E92796442900E9D889 /* DefaultBackEnd */,
+				535CFE9B27979B3000E83052 /* MedTrackerDefaultBackEnd */,
 			);
 			productName = MedTracker;
 			productReference = 53E9123927527BCE00710D4C /* MedTracker.app */;
@@ -1369,17 +1369,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		53B329E92796442900E9D889 /* DefaultBackEnd */ = {
+		535CFE9B27979B3000E83052 /* MedTrackerDefaultBackEnd */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DefaultBackEnd;
+			productName = MedTrackerDefaultBackEnd;
 		};
-		53B329EB2796443300E9D889 /* DefaultBackEnd */ = {
+		535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DefaultBackEnd;
+			productName = MedTrackerDefaultBackEnd;
 		};
-		53B329ED2796443800E9D889 /* DefaultBackEnd */ = {
+		535CFE9F27979B4000E83052 /* MedTrackerDefaultBackEnd */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DefaultBackEnd;
+			productName = MedTrackerDefaultBackEnd;
 		};
 		53BB309C2796325100DD7255 /* JFLib.Services */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,5 +1,5 @@
 import Foundation
-import MedicationApp
+import MedicationContext
 
 class MockGetTrackedMedicationsUseCase: GetTrackedMedicationsUseCase {
     var response: GetTrackedMedicationsResponse = GetTrackedMedicationsResponse(date: Date.current, medications: [])

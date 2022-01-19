@@ -1,5 +1,5 @@
 import Foundation
-import MedicationApp
+import MedicationContext
 import XCTest
 
 class MockRecordAdministrationUseCase: RecordAdministrationUseCase {

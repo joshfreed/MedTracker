@@ -1,8 +1,8 @@
 import Intents
 import Dip
 import JFLib_Services
-import Common
-import DefaultBackEnd
+import MTCommon
+import MTDefaultBackEnd
 
 class IntentHandler: INExtension {
     let services = AppIntentsServices()

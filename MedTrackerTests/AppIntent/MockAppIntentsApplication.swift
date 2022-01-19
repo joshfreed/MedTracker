@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import MedTracker
-@testable import MedicationApp
+@testable import MedicationContext
 
 class MockAppIntentsApplication: AppIntentsApplication {
     // MARK: Get Tracked Medications
