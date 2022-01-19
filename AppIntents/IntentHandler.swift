@@ -5,9 +5,11 @@ import MTCommon
 import MTDefaultBackEnd
 
 class IntentHandler: INExtension {
-    let services = AppIntentsServices()
-    let backEndModule = BackEndModule()
-    let widgetCenterModule = WidgetCenterModule()
+    private let services = AppIntentsServices()
+    private let modules: [MedTrackerModule] = [
+        BackEndModule(),
+        WidgetCenterModule(),
+    ]
 
     override init() {
         super.init()
@@ -15,15 +17,13 @@ class IntentHandler: INExtension {
 
         // Register Services
         let container = DipContainer()
-        backEndModule.registerServices(env: .live, container: container.container)
-        widgetCenterModule.registerServices(env: .live, container: container.container)
+        modules.forEach { $0.registerServices(env: .live, container: container.container) }
         container.container.register(.unique) { AppIntentsFacade(backEnd: $0) }.implements(AppIntentsApplication.self)
         JFServices.initialize(container: container)
 
         // Bootstrap App
         services.coreDataSavePublisher.publishWhenCoreDataSaves()
-        backEndModule.bootstrap(env: .live)
-        widgetCenterModule.bootstrap(env: .live)
+        modules.forEach { $0.bootstrap(env: .live) }
     }
 
     deinit {

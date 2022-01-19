@@ -5,7 +5,7 @@ import JFLib_Services
 import MTCommon
 import MTBackEndCore
 
-class WidgetCenterModule {
+class WidgetCenterModule: MedTrackerModule {
     private var cancellables = Set<AnyCancellable>()
 
     func registerServices(env: XcodeEnvironment, container: DependencyContainer) {

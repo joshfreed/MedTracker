@@ -8,9 +8,11 @@ import MTDefaultBackEnd
 @main
 struct MedTrackerApp: App {
     private let env: XcodeEnvironment
-    private let backEndModule = BackEndModule()
-    private let widgetCenterModule = WidgetCenterModule()
-    private let shortcutsModule = ShortcutsModule()
+    private let modules: [MedTrackerModule] = [
+        BackEndModule(),
+        WidgetCenterModule(),
+        ShortcutsModule(),
+    ]
     private let coreDataSaveListener = CoreDataSaveListener()
 
     init() {
@@ -32,17 +34,12 @@ struct MedTrackerApp: App {
     }
 
     private func registerServices(container: DependencyContainer) {
-        backEndModule.registerServices(env: env, container: container)
-        widgetCenterModule.registerServices(env: env, container: container)
-        shortcutsModule.registerServices(env: env, container: container)
-
+        modules.forEach { $0.registerServices(env: env, container: container) }
         container.register(.unique) { ApplicationFacade(backEnd: $0) }.implements(MedTrackerApplication.self)
     }
 
     private func bootstrapEnvironment() {
-        backEndModule.bootstrap(env: env)
-        widgetCenterModule.bootstrap(env: env)
-        shortcutsModule.bootstrap(env: env)
+        modules.forEach { $0.bootstrap(env: env) }
         
         switch env {
         case .live:

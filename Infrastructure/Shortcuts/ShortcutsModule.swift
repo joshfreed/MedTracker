@@ -5,7 +5,7 @@ import JFLib_Services
 import MTCommon
 import MTBackEndCore
 
-class ShortcutsModule {
+class ShortcutsModule: MedTrackerModule {
     private var cancellables = Set<AnyCancellable>()
     func registerServices(env: XcodeEnvironment, container: DependencyContainer) {
         switch env {
