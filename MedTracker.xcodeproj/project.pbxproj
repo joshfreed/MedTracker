@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		530C5BF0275EAE410089B69F /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
 		531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DC275BC7E400CE3753 /* logErrorAndReplaceWith.swift */; };
 		531674E0275BCC4800CE3753 /* DailySchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674DF275BCC4800CE3753 /* DailySchedulePage.swift */; };
@@ -40,9 +39,10 @@
 		535CFE9E27979B3900E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */; };
 		535CFEA027979B4000E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9F27979B4000E83052 /* MedTrackerDefaultBackEnd */; };
 		5365757627820E5500D3AEF4 /* PreviewApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365757527820E5500D3AEF4 /* PreviewApplication.swift */; };
-		536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC6D275E960B007AAD9B /* IntentDonationService.swift */; };
-		536EAC72275E989E007AAD9B /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
-		538F8BB5277A006D0023C5E5 /* MedTrackerWidgetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */; };
+		537D55952798BC41006F2387 /* ShortcutDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55912798BC41006F2387 /* ShortcutDonationService.swift */; };
+		537D55962798BC41006F2387 /* ShortcutsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55922798BC41006F2387 /* ShortcutsModule.swift */; };
+		537D55972798BC41006F2387 /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55932798BC41006F2387 /* IntentDonationService.swift */; };
+		537D55982798BC41006F2387 /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55942798BC41006F2387 /* EmptyDonationService.swift */; };
 		5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53A35FB82778C7C400D12C8C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A35FB72778C7C400D12C8C /* WidgetKit.framework */; };
 		53A35FBA2778C7C400D12C8C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A35FB92778C7C400D12C8C /* SwiftUI.framework */; };
@@ -53,7 +53,6 @@
 		53A35FC62778C7C500D12C8C /* AppWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53A35FB62778C7C400D12C8C /* AppWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		53A35FCC2778DB6D00D12C8C /* DailySummaryTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FCA2778DB6900D12C8C /* DailySummaryTimelineProvider.swift */; };
 		53A35FD12778DC2300D12C8C /* DailySummaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FD02778DC2300D12C8C /* DailySummaryEntry.swift */; };
-		53A35FD72778DDFF00D12C8C /* EmptyDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC71275E989E007AAD9B /* EmptyDonationService.swift */; };
 		53A35FDB2778E02200D12C8C /* Logger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531674D9275BC5DB00CE3753 /* Logger+extensions.swift */; };
 		53A35FDF2778E2F700D12C8C /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A35FDE2778E2F700D12C8C /* DailySummaryView.swift */; };
 		53BB30882795C51C00DD7255 /* MedTrackerApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB30872795C51C00DD7255 /* MedTrackerApplication.swift */; };
@@ -61,23 +60,13 @@
 		53BB308E27962B1400DD7255 /* LogMedicationIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316753F275C20B100CE3753 /* LogMedicationIntentHandler.swift */; };
 		53BB30902796307B00DD7255 /* WidgetApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB308F2796307B00DD7255 /* WidgetApplication.swift */; };
 		53BB309D2796325100DD7255 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53BB309C2796325100DD7255 /* JFLib.Services */; };
+		53BF58832798B9D30024D976 /* MedTrackerModules in Frameworks */ = {isa = PBXBuildFile; productRef = 53BF58822798B9D30024D976 /* MedTrackerModules */; };
+		53BF58852798B9D90024D976 /* MedTrackerModules in Frameworks */ = {isa = PBXBuildFile; productRef = 53BF58842798B9D90024D976 /* MedTrackerModules */; };
 		53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D3A8052756DBC50090B266 /* JFLib.Services */; };
 		53D4CAE42792302D0023C067 /* AppIntentsApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAE32792302D0023C067 /* AppIntentsApplication.swift */; };
 		53D4CAE7279311000023C067 /* MockAppIntentsApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAE6279311000023C067 /* MockAppIntentsApplication.swift */; };
 		53D4CAE9279314470023C067 /* SiriIntentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAE8279314470023C067 /* SiriIntentUITests.swift */; };
-		53D4CAEB27939E9C0023C067 /* WidgetCenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAEA27939E9C0023C067 /* WidgetCenterModule.swift */; };
-		53D4CAEE27946E2C0023C067 /* WidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAED27946E2C0023C067 /* WidgetService.swift */; };
-		53D4CAF027946E3A0023C067 /* EmptyWidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAEF27946E3A0023C067 /* EmptyWidgetService.swift */; };
-		53D4CAF127946F7D0023C067 /* WidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAED27946E2C0023C067 /* WidgetService.swift */; };
-		53D4CAF227946F7F0023C067 /* WidgetCenterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAEA27939E9C0023C067 /* WidgetCenterModule.swift */; };
-		53D4CAF327946F830023C067 /* EmptyWidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CAEF27946E3A0023C067 /* EmptyWidgetService.swift */; };
 		53D4CAF8279470160023C067 /* JFLib.Services in Frameworks */ = {isa = PBXBuildFile; productRef = 53D4CAF7279470160023C067 /* JFLib.Services */; };
-		53D4CAFB279479820023C067 /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536EAC6D275E960B007AAD9B /* IntentDonationService.swift */; };
-		53D4CB07279497930023C067 /* ShortcutsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CB06279497930023C067 /* ShortcutsModule.swift */; };
-		53D4CB09279497FA0023C067 /* ShortcutDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CB08279497FA0023C067 /* ShortcutDonationService.swift */; };
-		53D4CB0A279498170023C067 /* ShortcutDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CB08279497FA0023C067 /* ShortcutDonationService.swift */; };
-		53D4CB0B279498310023C067 /* ShortcutDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4CB08279497FA0023C067 /* ShortcutDonationService.swift */; };
-		53E242F5277C981100FC5C72 /* MedTrackerWidgetCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */; };
 		53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9123C27527BCE00710D4C /* MedTrackerApp.swift */; };
 		53E9124127527BD000710D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124027527BD000710D4C /* Assets.xcassets */; };
 		53E9124427527BD000710D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E9124327527BD000710D4C /* Preview Assets.xcassets */; };
@@ -168,10 +157,11 @@
 		532E7667275921CC0092AB85 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		53554B1A277F7F9C00A7C942 /* CoreDataSaveListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSaveListener.swift; sourceTree = "<group>"; };
 		5365757527820E5500D3AEF4 /* PreviewApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewApplication.swift; sourceTree = "<group>"; };
-		536EAC6D275E960B007AAD9B /* IntentDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentDonationService.swift; sourceTree = "<group>"; };
-		536EAC71275E989E007AAD9B /* EmptyDonationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDonationService.swift; sourceTree = "<group>"; };
 		536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MedTrackerRelease.entitlements; sourceTree = "<group>"; };
-		538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerWidgetCenter.swift; sourceTree = "<group>"; };
+		537D55912798BC41006F2387 /* ShortcutDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutDonationService.swift; path = Infrastructure/Shortcuts/ShortcutDonationService.swift; sourceTree = SOURCE_ROOT; };
+		537D55922798BC41006F2387 /* ShortcutsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutsModule.swift; path = Infrastructure/Shortcuts/ShortcutsModule.swift; sourceTree = SOURCE_ROOT; };
+		537D55932798BC41006F2387 /* IntentDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntentDonationService.swift; path = Infrastructure/Shortcuts/IntentDonationService.swift; sourceTree = SOURCE_ROOT; };
+		537D55942798BC41006F2387 /* EmptyDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyDonationService.swift; path = Infrastructure/Shortcuts/EmptyDonationService.swift; sourceTree = SOURCE_ROOT; };
 		53A35FB62778C7C400D12C8C /* AppWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A35FB72778C7C400D12C8C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		53A35FB92778C7C400D12C8C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -188,11 +178,6 @@
 		53D4CAE32792302D0023C067 /* AppIntentsApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentsApplication.swift; sourceTree = "<group>"; };
 		53D4CAE6279311000023C067 /* MockAppIntentsApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppIntentsApplication.swift; sourceTree = "<group>"; };
 		53D4CAE8279314470023C067 /* SiriIntentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriIntentUITests.swift; sourceTree = "<group>"; };
-		53D4CAEA27939E9C0023C067 /* WidgetCenterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterModule.swift; sourceTree = "<group>"; };
-		53D4CAED27946E2C0023C067 /* WidgetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetService.swift; sourceTree = "<group>"; };
-		53D4CAEF27946E3A0023C067 /* EmptyWidgetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyWidgetService.swift; sourceTree = "<group>"; };
-		53D4CB06279497930023C067 /* ShortcutsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsModule.swift; sourceTree = "<group>"; };
-		53D4CB08279497FA0023C067 /* ShortcutDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutDonationService.swift; sourceTree = "<group>"; };
 		53E100CA277A0943008FB883 /* AppWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		53E9123927527BCE00710D4C /* MedTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E9123C27527BCE00710D4C /* MedTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTrackerApp.swift; sourceTree = "<group>"; };
@@ -213,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BF58832798B9D30024D976 /* MedTrackerModules in Frameworks */,
 				535CFE9E27979B3900E83052 /* MedTrackerDefaultBackEnd in Frameworks */,
 				53167521275C202500CE3753 /* Intents.framework in Frameworks */,
 				53D4CAF8279470160023C067 /* JFLib.Services in Frameworks */,
@@ -234,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BF58852798B9D90024D976 /* MedTrackerModules in Frameworks */,
 				535CFE9C27979B3000E83052 /* MedTrackerDefaultBackEnd in Frameworks */,
 				53F409C9275A6F3600AECAEB /* Dip in Frameworks */,
 				53D3A8062756DBC50090B266 /* JFLib.Services in Frameworks */,
@@ -425,26 +412,15 @@
 			path = DailySummary;
 			sourceTree = "<group>";
 		};
-		536EAC6F275E968F007AAD9B /* Shortcuts */ = {
+		537D55902798BC37006F2387 /* Shortcuts */ = {
 			isa = PBXGroup;
 			children = (
-				53D4CB06279497930023C067 /* ShortcutsModule.swift */,
-				536EAC6D275E960B007AAD9B /* IntentDonationService.swift */,
-				536EAC71275E989E007AAD9B /* EmptyDonationService.swift */,
-				53D4CB08279497FA0023C067 /* ShortcutDonationService.swift */,
+				537D55942798BC41006F2387 /* EmptyDonationService.swift */,
+				537D55932798BC41006F2387 /* IntentDonationService.swift */,
+				537D55912798BC41006F2387 /* ShortcutDonationService.swift */,
+				537D55922798BC41006F2387 /* ShortcutsModule.swift */,
 			);
 			path = Shortcuts;
-			sourceTree = "<group>";
-		};
-		538F8BB3277A00540023C5E5 /* WidgetCenter */ = {
-			isa = PBXGroup;
-			children = (
-				53D4CAED27946E2C0023C067 /* WidgetService.swift */,
-				53D4CAEA27939E9C0023C067 /* WidgetCenterModule.swift */,
-				538F8BB4277A006D0023C5E5 /* MedTrackerWidgetCenter.swift */,
-				53D4CAEF27946E3A0023C067 /* EmptyWidgetService.swift */,
-			);
-			path = WidgetCenter;
 			sourceTree = "<group>";
 		};
 		53A35FBB2778C7C400D12C8C /* AppWidgets */ = {
@@ -483,11 +459,10 @@
 		53D3A7FE2756DA450090B266 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				537D55902798BC37006F2387 /* Shortcuts */,
 				531674DB275BC7D300CE3753 /* Combine */,
 				531674D8275BC59A00CE3753 /* Logging */,
 				53D3A7FF2756DA720090B266 /* Persistence */,
-				536EAC6F275E968F007AAD9B /* Shortcuts */,
-				538F8BB3277A00540023C5E5 /* WidgetCenter */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -592,6 +567,7 @@
 			packageProductDependencies = (
 				53D4CAF7279470160023C067 /* JFLib.Services */,
 				535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */,
+				53BF58822798B9D30024D976 /* MedTrackerModules */,
 			);
 			productName = AppIntents;
 			productReference = 53167520275C202500CE3753 /* AppIntents.appex */;
@@ -638,6 +614,7 @@
 				53D3A8052756DBC50090B266 /* JFLib.Services */,
 				53F409C8275A6F3600AECAEB /* Dip */,
 				535CFE9B27979B3000E83052 /* MedTrackerDefaultBackEnd */,
+				53BF58842798B9D90024D976 /* MedTrackerModules */,
 			);
 			productName = MedTracker;
 			productReference = 53E9123927527BCE00710D4C /* MedTracker.app */;
@@ -783,15 +760,8 @@
 				53D4CAE42792302D0023C067 /* AppIntentsApplication.swift in Sources */,
 				53167541275C212600CE3753 /* Intents.intentdefinition in Sources */,
 				53167524275C202500CE3753 /* IntentHandler.swift in Sources */,
-				53D4CAFB279479820023C067 /* IntentDonationService.swift in Sources */,
-				530C5BF0275EAE410089B69F /* EmptyDonationService.swift in Sources */,
-				53D4CB0A279498170023C067 /* ShortcutDonationService.swift in Sources */,
 				53167540275C20B200CE3753 /* LogMedicationIntentHandler.swift in Sources */,
-				53E242F5277C981100FC5C72 /* MedTrackerWidgetCenter.swift in Sources */,
-				53D4CAF127946F7D0023C067 /* WidgetService.swift in Sources */,
 				5392B0A727617A0000F486DE /* Logger+extensions.swift in Sources */,
-				53D4CAF227946F7F0023C067 /* WidgetCenterModule.swift in Sources */,
-				53D4CAF327946F830023C067 /* EmptyWidgetService.swift in Sources */,
 				E9AFC07D5B1829CB3CBBAEE3 /* AppIntentsServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,9 +773,7 @@
 				53A35FD12778DC2300D12C8C /* DailySummaryEntry.swift in Sources */,
 				53A35FC22778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */,
 				53A35FDF2778E2F700D12C8C /* DailySummaryView.swift in Sources */,
-				53D4CB0B279498310023C067 /* ShortcutDonationService.swift in Sources */,
 				53BB30902796307B00DD7255 /* WidgetApplication.swift in Sources */,
-				53A35FD72778DDFF00D12C8C /* EmptyDonationService.swift in Sources */,
 				53A35FCC2778DB6D00D12C8C /* DailySummaryTimelineProvider.swift in Sources */,
 				53A35FDB2778E02200D12C8C /* Logger+extensions.swift in Sources */,
 				53A35FBD2778C7C400D12C8C /* AppWidgets.swift in Sources */,
@@ -816,21 +784,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537D55952798BC41006F2387 /* ShortcutDonationService.swift in Sources */,
 				531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */,
 				531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */,
+				537D55982798BC41006F2387 /* EmptyDonationService.swift in Sources */,
 				532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */,
-				536EAC72275E989E007AAD9B /* EmptyDonationService.swift in Sources */,
 				531674EE275C154900CE3753 /* UITestHelper.swift in Sources */,
+				537D55962798BC41006F2387 /* ShortcutsModule.swift in Sources */,
 				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
 				53A35FC32778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */,
 				531674F2275C179D00CE3753 /* Intents.intentdefinition in Sources */,
-				53D4CAF027946E3A0023C067 /* EmptyWidgetService.swift in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
 				5365757627820E5500D3AEF4 /* PreviewApplication.swift in Sources */,
-				53D4CB09279497FA0023C067 /* ShortcutDonationService.swift in Sources */,
 				53BB30882795C51C00DD7255 /* MedTrackerApplication.swift in Sources */,
 				53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */,
-				53D4CAEE27946E2C0023C067 /* WidgetService.swift in Sources */,
 				53BB308E27962B1400DD7255 /* LogMedicationIntentHandler.swift in Sources */,
 				532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */,
 				53E9126827543A9000710D4C /* MedicationCard.swift in Sources */,
@@ -840,12 +807,9 @@
 				53262B5427568443001C6FE9 /* MedicationList.swift in Sources */,
 				532E7668275921CC0092AB85 /* CardViewModifier.swift in Sources */,
 				53554B1B277F7F9C00A7C942 /* CoreDataSaveListener.swift in Sources */,
-				53D4CAEB27939E9C0023C067 /* WidgetCenterModule.swift in Sources */,
 				53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */,
 				53BB308D27962B1200DD7255 /* AppIntentsApplication.swift in Sources */,
-				53D4CB07279497930023C067 /* ShortcutsModule.swift in Sources */,
-				538F8BB5277A006D0023C5E5 /* MedTrackerWidgetCenter.swift in Sources */,
-				536EAC70275E96A0007AAD9B /* IntentDonationService.swift in Sources */,
+				537D55972798BC41006F2387 /* IntentDonationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1385,6 +1349,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53D3A8042756DBC50090B266 /* XCRemoteSwiftPackageReference "JFLib" */;
 			productName = JFLib.Services;
+		};
+		53BF58822798B9D30024D976 /* MedTrackerModules */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MedTrackerModules;
+		};
+		53BF58842798B9D90024D976 /* MedTrackerModules */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MedTrackerModules;
 		};
 		53D3A8052756DBC50090B266 /* JFLib.Services */ = {
 			isa = XCSwiftPackageProductDependency;

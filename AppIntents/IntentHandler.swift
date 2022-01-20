@@ -3,6 +3,7 @@ import Dip
 import JFLib_Services
 import MTCommon
 import MTDefaultBackEnd
+import MTWidgetCenter
 
 class IntentHandler: INExtension {
     private let services = AppIntentsServices()

@@ -7,6 +7,7 @@ import MTBackEndCore
 
 class ShortcutsModule: MedTrackerModule {
     private var cancellables = Set<AnyCancellable>()
+
     func registerServices(env: XcodeEnvironment, container: DependencyContainer) {
         switch env {
         case .live:

@@ -4,6 +4,7 @@ import Dip
 import JFLib_Services
 import MTCommon
 import MTDefaultBackEnd
+import MTWidgetCenter
 
 @main
 struct MedTrackerApp: App {
