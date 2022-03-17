@@ -39,6 +39,7 @@
 		535CFE9E27979B3900E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9D27979B3900E83052 /* MedTrackerDefaultBackEnd */; };
 		535CFEA027979B4000E83052 /* MedTrackerDefaultBackEnd in Frameworks */ = {isa = PBXBuildFile; productRef = 535CFE9F27979B4000E83052 /* MedTrackerDefaultBackEnd */; };
 		5365757627820E5500D3AEF4 /* PreviewApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365757527820E5500D3AEF4 /* PreviewApplication.swift */; };
+		5376FBC027DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5376FBBF27DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift */; };
 		537D55952798BC41006F2387 /* ShortcutDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55912798BC41006F2387 /* ShortcutDonationService.swift */; };
 		537D55962798BC41006F2387 /* ShortcutsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55922798BC41006F2387 /* ShortcutsModule.swift */; };
 		537D55972798BC41006F2387 /* IntentDonationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D55932798BC41006F2387 /* IntentDonationService.swift */; };
@@ -158,6 +159,7 @@
 		53554B1A277F7F9C00A7C942 /* CoreDataSaveListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSaveListener.swift; sourceTree = "<group>"; };
 		5365757527820E5500D3AEF4 /* PreviewApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewApplication.swift; sourceTree = "<group>"; };
 		536EAC73275EA7F3007AAD9B /* MedTrackerRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MedTrackerRelease.entitlements; sourceTree = "<group>"; };
+		5376FBBF27DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationReminderSchedulingTests.swift; sourceTree = "<group>"; };
 		537D55912798BC41006F2387 /* ShortcutDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutDonationService.swift; path = Infrastructure/Shortcuts/ShortcutDonationService.swift; sourceTree = SOURCE_ROOT; };
 		537D55922798BC41006F2387 /* ShortcutsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutsModule.swift; path = Infrastructure/Shortcuts/ShortcutsModule.swift; sourceTree = SOURCE_ROOT; };
 		537D55932798BC41006F2387 /* IntentDonationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntentDonationService.swift; path = Infrastructure/Shortcuts/IntentDonationService.swift; sourceTree = SOURCE_ROOT; };
@@ -544,6 +546,7 @@
 				531674E3275BCC7C00CE3753 /* Helpers */,
 				53E9125727527BD000710D4C /* MedTrackerUITests.swift */,
 				53D4CAE8279314470023C067 /* SiriIntentUITests.swift */,
+				5376FBBF27DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift */,
 			);
 			path = MedTrackerUITests;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531674E7275BCC9B00CE3753 /* Extensions.swift in Sources */,
+				5376FBC027DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift in Sources */,
 				531674E2275BCC6C00CE3753 /* PageErrors.swift in Sources */,
 				53E9125827527BD000710D4C /* MedTrackerUITests.swift in Sources */,
 				531674E5275BCC8600CE3753 /* Helpers.swift in Sources */,

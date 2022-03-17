@@ -27,7 +27,6 @@ class MedTrackerUITests: XCTestCase {
             [
                 "id": ["uuid": UUID().uuidString],
                 "name": "Crazy Pills",
-                "administrationTime": 9
             ]
         ]
         let app = launch(medications: medications)
@@ -47,7 +46,6 @@ class MedTrackerUITests: XCTestCase {
             [
                 "id": medicationId,
                 "name": "Crazy Pills",
-                "administrationTime": 9
             ]
         ]
         let administrations: [[AnyHashable: Any]] = [
@@ -65,27 +63,5 @@ class MedTrackerUITests: XCTestCase {
         XCTAssertTrue(med.wasAdministered)
         try med.tap()
         XCTAssertFalse(med.wasAdministered)
-    }
-
-    // MARK: - Helpers
-
-    private func launch(
-        medications: [[AnyHashable: Any]]? = nil,
-        administrations: [[AnyHashable: Any]]? = nil
-    ) -> XCUIApplication {
-        let app = XCUIApplication()
-
-        app.launchArguments.append("UI_TESTING")
-
-        if let medications = medications {
-            app.launchEnvironment["medications"] = medications.toJsonString()
-        }
-        if let administrations = administrations {
-            app.launchEnvironment["administrations"] = administrations.toJsonString()
-        }
-
-        app.launch()
-
-        return app
     }
 }

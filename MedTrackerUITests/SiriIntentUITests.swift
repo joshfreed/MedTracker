@@ -53,26 +53,4 @@ class SiriIntentUITests: XCTestCase {
         let med = try home.getMedication(named: "Crazy Pills")
         XCTAssertTrue(med.wasAdministered)
     }
-
-    // MARK: - Helpers
-
-    private func launch(
-        medications: [[AnyHashable: Any]]? = nil,
-        administrations: [[AnyHashable: Any]]? = nil
-    ) -> XCUIApplication {
-        let app = XCUIApplication()
-
-        app.launchArguments.append("UI_TESTING")
-
-        if let medications = medications {
-            app.launchEnvironment["medications"] = medications.toJsonString()
-        }
-        if let administrations = administrations {
-            app.launchEnvironment["administrations"] = administrations.toJsonString()
-        }
-
-        app.launch()
-
-        return app
-    }
 }

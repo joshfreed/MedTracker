@@ -5,6 +5,7 @@ import JFLib_Services
 import MTCommon
 import MTDefaultBackEnd
 import MTWidgetCenter
+import MTLocalNotifications
 
 @main
 struct MedTrackerApp: App {
@@ -13,6 +14,7 @@ struct MedTrackerApp: App {
         BackEndModule(),
         WidgetCenterModule(),
         ShortcutsModule(),
+        LocalNotificationModule(),
     ]
     private let coreDataSaveListener = CoreDataSaveListener()
 
