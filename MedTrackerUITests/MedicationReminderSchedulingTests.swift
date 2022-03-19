@@ -75,6 +75,22 @@ class MedicationReminderSchedulingTests: XCTestCase {
         XCTAssertGreaterThan(scheduledNotifications.count, 0)
     }
 
+    func test_schedules_notifications_for_all_medications_on_app_launch() throws {
+        let medicationId = UUID().uuidString
+        let medications: [[AnyHashable: Any]] = [
+            [
+                "id": ["uuid": medicationId],
+                "name": "Crazy Pills",
+                "reminder": [
+                    "reminderTime": ["hour": 9, "minute": 0]
+                ]
+            ]
+        ]
+        let app = launch(medications: medications)
+        let scheduledNotifications = try fetchScheduleNotifications(for: medicationId)
+        XCTAssertGreaterThan(scheduledNotifications.count, 0)
+    }
+
     // MARK: - Helpers
 
     private func clearScheduledNotifications() throws {

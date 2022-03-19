@@ -43,6 +43,14 @@ class DailyScheduleViewModel: ObservableObject {
             .sink { [weak self] response in
                 self?.present(response)
             }
+
+        Task {
+            do {
+                try await application.scheduleReminderNotifications()
+            } catch {
+                Logger.dailySchedule.error(error)
+            }
+        }
     }
 
     func cancel() {

@@ -24,4 +24,6 @@ class PreviewApplication: MedTrackerApplication {
     func recordAdministration(medicationName: String) async throws {}
 
     func removeAdministration(medicationId: String) async throws {}
+
+    func scheduleReminderNotifications() async throws {}
 }
