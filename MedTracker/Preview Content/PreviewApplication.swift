@@ -26,5 +26,11 @@ class PreviewApplication: MedTrackerBackEnd {
 
     func removeAdministration(medicationId: String) async throws {}
 
+    func getEditableMedication(by id: String) async throws -> GetEditableMedicationResponse {
+        fatalError("Not implemented")
+    }
+
+    func updateMedication(_ command: UpdateMedicationCommand) async throws {}
+
     func scheduleReminderNotifications() async throws {}
 }

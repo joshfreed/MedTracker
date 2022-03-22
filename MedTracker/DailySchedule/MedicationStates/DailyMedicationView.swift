@@ -10,20 +10,32 @@ import SwiftUI
 struct DailyMedicationView: View {
     let medication: String
     @Binding var wasAdministered: Bool
+    var onEdit: () -> Void = {}
 
     var body: some View {
         HStack {
-            Text(medication)
-            Spacer()
-            Image(systemName: wasAdministered ? "checkmark.circle" : "circle")
-                .accessibilityIdentifier("administrationState")
-                .accessibilityValue(wasAdministered ? "Administered" : "Not Administered")
-        }
-        .padding()
-        .contentShape(Rectangle())
-        .onTapGesture {
-            withAnimation {
-                wasAdministered.toggle()
+            HStack {
+                Text(medication)
+                Spacer()
+                Image(systemName: wasAdministered ? "checkmark.circle" : "circle")
+                    .accessibilityIdentifier("administrationState")
+                    .accessibilityValue(wasAdministered ? "Administered" : "Not Administered")
+            }
+            .padding()
+            .contentShape(Rectangle())
+            .onTapGesture {
+                withAnimation {
+                    wasAdministered.toggle()
+                }
+            }
+            .card()
+
+            Button(action: {
+                onEdit()
+            }) {
+                Image(systemName: "pencil")
+                    .padding()
+                    .card()
             }
         }
     }
@@ -35,6 +47,7 @@ struct DailyMedicationView_Previews: PreviewProvider {
 
         var body: some View {
             DailyMedicationView(medication: "Testapraxin", wasAdministered: $wasAdministered)
+                .background(Color.gray)
         }
     }
 

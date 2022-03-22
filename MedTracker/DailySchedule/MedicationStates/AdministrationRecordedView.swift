@@ -24,5 +24,6 @@ struct AdministrationRecordedView: View {
 struct AdministrationRecordedView_Previews: PreviewProvider {
     static var previews: some View {
         AdministrationRecordedView(medication: "Testprazin")
+            .previewLayout(.sizeThatFits)
     }
 }

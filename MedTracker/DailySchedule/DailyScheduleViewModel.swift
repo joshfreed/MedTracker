@@ -2,7 +2,7 @@ import Foundation
 import OSLog
 import Combine
 import JFLib_Services
-import MedicationContext
+import MTBackEndCore
 
 class DailyScheduleViewModel: ObservableObject {
     @Published private(set) var date: String = ""
@@ -26,9 +26,13 @@ class DailyScheduleViewModel: ObservableObject {
         Logger.dailySchedule.debug("deinit")
     }
 
-    func load() {
+    func load() async {
         Logger.dailySchedule.debug("load")
-        
+        getTrackedMedications()
+        await scheduleReminderNotifications()
+    }
+
+    private func getTrackedMedications() {
         guard cancellable == nil else { return }
 
         let date = Date()
@@ -43,13 +47,13 @@ class DailyScheduleViewModel: ObservableObject {
             .sink { [weak self] response in
                 self?.present(response)
             }
+    }
 
-        Task {
-            do {
-                try await application.scheduleReminderNotifications()
-            } catch {
-                Logger.dailySchedule.error(error)
-            }
+    private func scheduleReminderNotifications() async {
+        do {
+            try await application.scheduleReminderNotifications()
+        } catch {
+            Logger.dailySchedule.error(error)
         }
     }
 

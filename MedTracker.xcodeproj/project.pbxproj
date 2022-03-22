@@ -72,6 +72,10 @@
 		53E9126827543A9000710D4C /* MedicationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126727543A9000710D4C /* MedicationCard.swift */; };
 		53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126927543CF100710D4C /* ScheduleSlotView.swift */; };
 		53E9126C27543E7900710D4C /* DailyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9126B27543E7900710D4C /* DailyScheduleView.swift */; };
+		53F1011127E7AF0500BC8781 /* EditMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F1011027E7AF0500BC8781 /* EditMedicationView.swift */; };
+		53F1011327E7AF5A00BC8781 /* TrackMedicationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F1011227E7AF5A00BC8781 /* TrackMedicationButton.swift */; };
+		53F1011527E7AFFF00BC8781 /* EditMedicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F1011427E7AFFF00BC8781 /* EditMedicationViewModel.swift */; };
+		53F1011A27E7B39A00BC8781 /* EditMedicationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F1011927E7B39A00BC8781 /* EditMedicationFormView.swift */; };
 		53F409C9275A6F3600AECAEB /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = 53F409C8275A6F3600AECAEB /* Dip */; };
 		E9AFC07D5B1829CB3CBBAEE3 /* AppIntentsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC53692DC2B30980CAC1A /* AppIntentsServices.swift */; };
 /* End PBXBuildFile section */
@@ -185,6 +189,10 @@
 		53E9126727543A9000710D4C /* MedicationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCard.swift; sourceTree = "<group>"; };
 		53E9126927543CF100710D4C /* ScheduleSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSlotView.swift; sourceTree = "<group>"; };
 		53E9126B27543E7900710D4C /* DailyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleView.swift; sourceTree = "<group>"; };
+		53F1011027E7AF0500BC8781 /* EditMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationView.swift; sourceTree = "<group>"; };
+		53F1011227E7AF5A00BC8781 /* TrackMedicationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMedicationButton.swift; sourceTree = "<group>"; };
+		53F1011427E7AFFF00BC8781 /* EditMedicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationViewModel.swift; sourceTree = "<group>"; };
+		53F1011927E7B39A00BC8781 /* EditMedicationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationFormView.swift; sourceTree = "<group>"; };
 		53FAEFB0275EABD300786858 /* AppIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppIntents.entitlements; sourceTree = "<group>"; };
 		E9AFC53692DC2B30980CAC1A /* AppIntentsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIntentsServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +341,7 @@
 				53262B5327568443001C6FE9 /* MedicationList.swift */,
 				53E9126727543A9000710D4C /* MedicationCard.swift */,
 				53E9126927543CF100710D4C /* ScheduleSlotView.swift */,
+				53F1011227E7AF5A00BC8781 /* TrackMedicationButton.swift */,
 			);
 			path = DailySchedule;
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 				532E7665275921B10092AB85 /* Shared */,
 				53262B5227568407001C6FE9 /* DailySchedule */,
 				53298AFC27595FB300B281C6 /* TrackMedication */,
+				53F1010F27E7AEF100BC8781 /* EditMedication */,
 				531674F3275C17B900CE3753 /* Info.plist */,
 				53E9123C27527BCE00710D4C /* MedTrackerApp.swift */,
 				531674F0275C177A00CE3753 /* Resources */,
@@ -532,6 +542,16 @@
 				5376FBBF27DFDBBA0028FF9F /* MedicationReminderSchedulingTests.swift */,
 			);
 			path = MedTrackerUITests;
+			sourceTree = "<group>";
+		};
+		53F1010F27E7AEF100BC8781 /* EditMedication */ = {
+			isa = PBXGroup;
+			children = (
+				53F1011027E7AF0500BC8781 /* EditMedicationView.swift */,
+				53F1011927E7B39A00BC8781 /* EditMedicationFormView.swift */,
+				53F1011427E7AFFF00BC8781 /* EditMedicationViewModel.swift */,
+			);
+			path = EditMedication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -773,18 +793,22 @@
 				537D55952798BC41006F2387 /* ShortcutDonationService.swift in Sources */,
 				531674DD275BC7E400CE3753 /* logErrorAndReplaceWith.swift in Sources */,
 				531674DA275BC5DB00CE3753 /* Logger+extensions.swift in Sources */,
+				53F1011527E7AFFF00BC8781 /* EditMedicationViewModel.swift in Sources */,
 				537D55982798BC41006F2387 /* EmptyDonationService.swift in Sources */,
 				532E7664275920190092AB85 /* DailyMedicationView.swift in Sources */,
 				531674EE275C154900CE3753 /* UITestHelper.swift in Sources */,
 				537D55962798BC41006F2387 /* ShortcutsModule.swift in Sources */,
 				532E7662275915A40092AB85 /* AdministrationRecordedView.swift in Sources */,
+				53F1011A27E7B39A00BC8781 /* EditMedicationFormView.swift in Sources */,
 				53A35FC32778C7C500D12C8C /* AppWidgets.intentdefinition in Sources */,
+				53F1011127E7AF0500BC8781 /* EditMedicationView.swift in Sources */,
 				531674F2275C179D00CE3753 /* Intents.intentdefinition in Sources */,
 				53E9123D27527BCE00710D4C /* MedTrackerApp.swift in Sources */,
 				5365757627820E5500D3AEF4 /* PreviewApplication.swift in Sources */,
 				53298B0027596BC700B281C6 /* NewMedicationView.swift in Sources */,
 				53BB308E27962B1400DD7255 /* LogMedicationIntentHandler.swift in Sources */,
 				532E7660275915100092AB85 /* MedicationPromptView.swift in Sources */,
+				53F1011327E7AF5A00BC8781 /* TrackMedicationButton.swift in Sources */,
 				53E9126827543A9000710D4C /* MedicationCard.swift in Sources */,
 				53E9126A27543CF100710D4C /* ScheduleSlotView.swift in Sources */,
 				53262B562756849E001C6FE9 /* DailyScheduleViewModel.swift in Sources */,

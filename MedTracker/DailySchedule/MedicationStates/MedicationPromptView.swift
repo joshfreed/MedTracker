@@ -34,5 +34,6 @@ struct MedicationPromptView: View {
 struct MedicationPromptView_Previews: PreviewProvider {
     static var previews: some View {
         MedicationPromptView(medication: "Testpraxin", wasAdministered: .constant(false))
+            .previewLayout(.sizeThatFits)
     }
 }
