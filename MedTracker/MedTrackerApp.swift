@@ -3,9 +3,12 @@ import OSLog
 import Dip
 import JFLib_Services
 import MTCommon
+import MTBackEndCore
 import MTDefaultBackEnd
 import MTWidgetCenter
 import MTLocalNotifications
+
+typealias MedTrackerApplication = MedTrackerBackEnd
 
 @main
 struct MedTrackerApp: App {
@@ -38,7 +41,6 @@ struct MedTrackerApp: App {
 
     private func registerServices(container: DependencyContainer) {
         modules.forEach { $0.registerServices(env: env, container: container) }
-        container.register(.unique) { ApplicationFacade(backEnd: $0) }.implements(MedTrackerApplication.self)
     }
 
     private func bootstrapEnvironment() {

@@ -1,6 +1,6 @@
 import Intents
 import OSLog
-import MedicationContext
+import MTBackEndCore
 
 class LogMedicationIntentHandler: NSObject, LogMedicationIntentHandling {
     private let application: AppIntentsApplication

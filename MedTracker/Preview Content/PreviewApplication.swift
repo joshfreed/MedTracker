@@ -1,8 +1,9 @@
 import Foundation
 import Combine
 import MedicationContext
+import MTBackEndCore
 
-class PreviewApplication: MedTrackerApplication {
+class PreviewApplication: MedTrackerBackEnd {
     func trackMedication(name: String, administrationTime: Int) async throws {}
 
     func getTrackedMedications(date: Date) -> AnyPublisher<GetTrackedMedicationsResponse, Error> {
