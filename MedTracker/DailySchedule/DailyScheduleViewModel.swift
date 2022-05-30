@@ -7,7 +7,6 @@ import MTBackEndCore
 class DailyScheduleViewModel: ObservableObject {
     @Published private(set) var date: String = ""
     @Published var medications: [DailySchedule.Medication] = []
-    @Published var lastFetchedAt: String = ""
 
     @Injected private var application: MedTrackerApplication
 
@@ -41,7 +40,7 @@ class DailyScheduleViewModel: ObservableObject {
 
         cancellable = application
             .getTrackedMedications(date: date)
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .print("GetTrackedMedicationsQuery", to: self)
             .logError(to: .dailySchedule, andReplaceWith: GetTrackedMedicationsResponse(date: date, medications: []))
             .sink { [weak self] response in
@@ -137,9 +136,6 @@ extension DailyScheduleViewModel {
         let df = DateFormatter()
         df.dateFormat = "MMMM d"
         date = df.string(from: response.date)
-
-        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        lastFetchedAt = df.string(from: response.date)
 
         medications = response.medications.map {
             .init(id: $0.id, name: $0.name, wasAdministered: $0.wasAdministered)

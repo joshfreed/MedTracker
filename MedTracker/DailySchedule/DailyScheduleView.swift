@@ -11,10 +11,6 @@ struct DailyScheduleView: View {
                 VStack(spacing: 16) {
                     MedicationList(medications: $vm.medications)
 
-                    Text(vm.lastFetchedAt)
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-
                     TrackMedicationButton()
                 }
             }
